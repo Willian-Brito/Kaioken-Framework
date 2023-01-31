@@ -15,7 +15,7 @@
 
 <h2>:page_facing_up: Padrões de Projeto</h2>
 <p>
-Os padrões de projetos foram utilizados para a construção deste framework, são baseados nos padrões do <b>GoF</b> e outros nos Padrões de Arquitetura de Aplicações Corporativas do <b>Martin Fowler</b>.
+Os padrões de projetos que foram utilizados para a construção deste framework, são baseados nos padrões do <b>GoF</b> e outros nos Padrões de Arquitetura de Aplicações Corporativas do <b>Martin Fowler</b>.
 
 * <b>Connection.php:</b> Encapsula a conexão com o banco de dados configurado, implementa o padrão <b>Singleton</b>.
 	
