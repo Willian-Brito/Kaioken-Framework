@@ -10,7 +10,7 @@
 
   Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança no desenvolvimento da <b>Área do Contador</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde sou responsável pelo desenvolvimento.
 
-  Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>padrões de projetos</b> do <b>GoF</b> e <b>Martin Fowler</b>.
+  Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>padrões de projetos</b>.
 </p>
 
 <h2>:page_facing_up: Padrões de Projeto</h2>
