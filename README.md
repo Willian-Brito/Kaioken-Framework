@@ -1,7 +1,7 @@
 # :fire: Kaioken Framework
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/KaiokenFramework/main/Kaioken%20Framework.png" alt="Kaioken Framework" />
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/Kaioken%20Framework.png" alt="Kaioken Framework" />
 </div>
 
 <h2>:point_right: Introdução</h2>
@@ -37,7 +37,7 @@ Alguns padrões de projetos foi utilizado para a construção deste framework al
 <h2>:open_file_folder: Estrutura</h2>
 <p>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/KaiokenFramework/main/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/framework/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
 </div>
 </p>
 
@@ -45,13 +45,13 @@ Alguns padrões de projetos foi utilizado para a construção deste framework al
 <p>
 A seguir, os passos mínimos para instalar e configurar uma aplicação no Adianti Framework. Este é um tutorial com recomendações genéricas, tanto para Linux e Windows.
 
-<h4>Instale o Apache</h4>
+<h4>:one: Instale o Apache</h4>
 Instale e configure o Apache2 (apache2.conf), altere as configurações do Apache para ele ler os .htaccess presentes na estrutura de diretório do Framework, que protegem determinados diretórios do acesso indevido.
    
     AllowOverride All
 
 
-<h4>Instale o PHP</h4>
+<h4>:two: Instale o PHP</h4>
 Instale e configure o PHP.<br>
 
 * <b>Módulos recomendados:</b> soap, xml, curl, sqlite3, php-sodium.
@@ -74,13 +74,13 @@ Instale e configure o PHP.<br>
       error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE
 
 
-<h4>Estrutura da Aplicação</h4>
+<h4>:three: Estrutura da Aplicação</h4>
 Faça download do <b>Kaioken Framework</b> descompacte o template conforme o seu sistema e renomeie para o nome real de seu projeto:
 
 * Ubuntu: /var/www/html/
 * Windows: C:\wamp64\www\
 
-<h4>Banco de dados</h4>
+<h4>:four: Banco de dados</h4>
 Crie o banco de dados de sua aplicação, usando PostgreSQL, MySQL e SQLite (testados até o momento).
 
 Configure o conector dentro da aplicação:
@@ -116,7 +116,7 @@ A seguir um exemplo de um conector para <b>MySQL</b>:
     pass = "mysql"
     type = "mysql"
 
-<h4>Classe Modelo</h4>
+<h4>:five: Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
 Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como save(), delete() e load() que manipulam um objeto na base de dados.
 
@@ -157,7 +157,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
         }
     }
 
-<h4>Classe Page</h4>
+<h4>:six: Classe Page</h4>
 Criando páginas para formulários, listagens, e outros.
 Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. 
 
