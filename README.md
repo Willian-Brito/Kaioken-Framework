@@ -31,14 +31,14 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 
 * <b>Wrappers:</b> O <b>Decorator</b> ou <b>Wrapper</b> é um padrão de projeto de software que permite adicionar um comportamento a um objeto já existente em tempo de execução, ou seja, agrega dinamicamente responsabilidades adicionais a um objeto, este padrão foi utilizado para adicionar aparência aos formulários e datagrids da aplicação. A classe <b>Form</b> e <b>Datagrid</b> contém os dados e as classes <b>KaiokenFormWrapper</b> e <b>KaiokenDatagridWrapper</b> contém toda a lógica de apresentação visual, utilizando este padrão caso queira alterar a aparência de sua aplicação, basta desenvolver uma classe de apresentação visual exemplo <b>BootstrapFormWrapper</b> ou <b>MaterializeFormWrapper</b>.
 
-* <b>Trait:</b>  Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construção de frameworks, basicamente traits são trechos de código (funcionalidades) que podem ser incorporados em classes. A vantagem é que as funcionalidades ficam em arquivos separados e você utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o princípio <b>DRY (Don´t Repeat Yourself)</b>e acaba facilitando a reutilização de códigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com múltiplas funcionalidades e quebrar o principio <b>SRP (Single Pesponsibility Principle)</b> do <b>SOLID</b>.
+* <b>Trait:</b>  Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construção de frameworks, basicamente traits são trechos de código (funcionalidades) que podem ser incorporados em classes. A vantagem é que as funcionalidades ficam em arquivos separados e você utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o princípio <b>DRY (Don´t Repeat Yourself)</b> e acaba facilitando a reutilização de códigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com múltiplas funcionalidades e quebrar o principio <b>SRP (Single Pesponsibility Principle)</b> do <b>SOLID</b>.
 </p>
 
 <h2>:shield: Segurança</h2>
 <p>
 Além de padrões de projetos, neste framework também foi utilizado princípios e técnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
 
-Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS, CSRF</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
+Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
 
 Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de segurança no gerenciamento de sessões:
 </p>
