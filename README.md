@@ -72,7 +72,7 @@ Conforme o framework for evoluindo será adicionado mais mecanismos de seguranç
 <p>
 A seguir, os passos mínimos para instalar e configurar uma aplicação no Kaioken Framework. Este é um tutorial com recomendações genéricas, tanto para Linux quanto para Windows.
 
-<h4>:one: Instale o Apache</h4>
+<h4>1- Instale o Apache</h4>
 Instale e configure o Apache2 (apache2.conf), altere as configurações do Apache para ele ler os <b>.htaccess</b> presentes na estrutura de diretório do Framework, que protegem determinados diretórios do acesso indevido.
 
 <br>
@@ -80,7 +80,7 @@ Instale e configure o Apache2 (apache2.conf), altere as configurações do Apach
     AllowOverride All
 
 
-<h4>:two: Instale o PHP</h4>
+<h4>2- Instale o PHP</h4>
 Instale e configure o PHP.<br>
 
 * <b>Módulos recomendados:</b> soap, xml, curl, sqlite3, php-sodium.
@@ -103,14 +103,14 @@ Instale e configure o PHP.<br>
       error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE
 
 
-<h4>:three: Estrutura da Aplicação</h4>
+<h4>3- Estrutura da Aplicação</h4>
 Faça download do <b>Kaioken Framework</b> descompacte o template conforme o seu sistema e renomeie para o nome real de seu projeto:
 <br>
 
 * Ubuntu: /var/www/html/
 * Windows: C:\wamp64\www\
 
-<h4>:four: Banco de dados</h4>
+<h4>4- Banco de dados</h4>
 Crie o banco de dados de sua aplicação, usando PostgreSQL, MySQL e SQLite (testados até o momento).
 
 Configure o conector dentro da aplicação:
@@ -146,7 +146,7 @@ A seguir um exemplo de um conector para <b>MySQL</b>:
     pass = "mysql"
     type = "mysql"
 
-<h4>:five: Classe Modelo</h4>
+<h4>5- Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
 Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como <b>save()</b>, <b>delete()</b> e <b>load()</b> que manipulam um objeto na base de dados.
 <br><br>
@@ -188,7 +188,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
         }
     }
 
-<h4>:six: Classe Page</h4>
+<h4>6- Classe Page</h4>
 Criando páginas para formulários, listagens, e outros.
 Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. <br><br>
 
