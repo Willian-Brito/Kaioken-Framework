@@ -358,5 +358,5 @@ As páginas controladoras de aplicação são salvas no diretório <b>app/Fronte
 
 <h2>:star: Creditos</h2>
 <p>
-  Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver a <b>Área do Contador</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adiquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b> no framework.
+  Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver a <b>Área do Contador</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adiquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b>.
 </p>
