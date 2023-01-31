@@ -72,7 +72,7 @@ Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de seguran
 <p>
 A seguir, os passos mínimos para instalar e configurar uma aplicação no Kaioken Framework. Este é um tutorial com recomendações genéricas, tanto para Linux e Windows.
 
-<h4>1️⃣ Instale o Apache</h4>
+<h4>:one: Instale o Apache</h4>
 Instale e configure o Apache2 (apache2.conf), altere as configurações do Apache para ele ler os .htaccess presentes na estrutura de diretório do Framework, que protegem determinados diretórios do acesso indevido.
 <br><br>
    
