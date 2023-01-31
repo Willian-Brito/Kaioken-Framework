@@ -34,6 +34,33 @@ Alguns padrões de projetos foi utilizado para a construção deste framework al
 * <b>Trait:</b> Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construções de frameworks, basicamente traits são trechos de codigo (funcionalidades) que podem ser incorporado em classes. A vantagem é que as funcionalidades ficam em arquivos separados e vc utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o principio <b>DRY</b> e acaba facilitando a reutilização de codigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com multiplas funcionalidades e quebrar o principio <b>SRP do SOLID</b>.
 </p>
 
+<h2>:shield: Segurança</h2>
+<p>
+Além de padrões de projetos, neste framework também foi utilizado principios e tecnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
+
+Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS, CSRF</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
+
+Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de segurança no gerenciamento de sessões:
+</p>
+
+
+    session.name = KAIOKEN_SESSID
+    session.cookie_domain="meusite.com.br"
+    session.use_trans_sid = 0
+    session.entropy_file = /dev/urandom
+    session.entropy_length = 32
+    session.cookie_httponly=On
+    session.cookie_samesite="Strict"
+    session.cookie_secure=On
+    session.name="KAIOKEN_SESSNAME"
+    session.sid_bits_per_character=6
+    session.sid_length=48
+    session.use_only_cookies=On
+    session.use_strict_mode=On
+    session.use_trans_sid=Off
+    session.gc_maxlifetime = 14000
+
+
 <h2>:open_file_folder: Estrutura</h2>
 <p>
 <div align="center">
@@ -327,32 +354,6 @@ As páginas controladoras de aplicação são salvas no diretório <b>app/Fronte
         #endregion
     }
 </p>
-
-<h2>:shield: Segurança</h2>
-<p>
-Além de padrões de projetos, neste framework também foi utilizado principios e tecnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
-
-Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS, CSRF</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
-
-Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de segurança no gerenciamento de sessões:
-</p>
-
-
-    session.name = KAIOKEN_SESSID
-    session.cookie_domain="meusite.com.br"
-    session.use_trans_sid = 0
-    session.entropy_file = /dev/urandom
-    session.entropy_length = 32
-    session.cookie_httponly=On
-    session.cookie_samesite="Strict"
-    session.cookie_secure=On
-    session.name="KAIOKEN_SESSNAME"
-    session.sid_bits_per_character=6
-    session.sid_length=48
-    session.use_only_cookies=On
-    session.use_strict_mode=On
-    session.use_trans_sid=Off
-    session.gc_maxlifetime = 14000
 
 <h2>:star: Creditos</h2>
 <p>
