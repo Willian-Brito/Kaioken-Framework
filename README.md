@@ -41,9 +41,9 @@ Alguns padrões de projetos foi utilizado para a construção deste framework al
 </div>
 </p>
 
-<h2>Guia de Instalação</h2>
+<h2>:technologist: Guia de Instalação</h2>
 <p>
-A seguir, os passos mínimos para instalar e configurar uma aplicação no Adianti Framework. Este é um tutorial com recomendações genéricas, tanto para Linux e Windows.
+A seguir, os passos mínimos para instalar e configurar uma aplicação no Kaioken Framework. Este é um tutorial com recomendações genéricas, tanto para Linux e Windows.
 
 <h4>:one: Instale o Apache</h4>
 Instale e configure o Apache2 (apache2.conf), altere as configurações do Apache para ele ler os .htaccess presentes na estrutura de diretório do Framework, que protegem determinados diretórios do acesso indevido.
@@ -118,7 +118,8 @@ A seguir um exemplo de um conector para <b>MySQL</b>:
 
 <h4>:five: Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
-Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como save(), delete() e load() que manipulam um objeto na base de dados.
+Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como <b>save()</b>, <b>delete()</b> e <b>load()</b> que manipulam um objeto na base de dados.
+<br><br>
 
     app/model/User.php
 
@@ -159,7 +160,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
 
 <h4>:six: Classe Page</h4>
 Criando páginas para formulários, listagens, e outros.
-Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. 
+Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. <br><br>
 
 As páginas controladoras de aplicação são salvas no diretório <b>app/Frontend/Page</b>. A classe deve conter o nome do a classe de Active Record que irá manipular os dados do formulário.
 
@@ -352,108 +353,6 @@ Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de seguran
     session.use_strict_mode=On
     session.use_trans_sid=Off
     session.gc_maxlifetime = 14000
-    
-  
-<h2>:technologist: Exemplo de Códigos</h2>
-<p>
-
-<h4>Imports:</h4>
-
-    use KaiokenFramework\Database\Transaction;
-    use KaiokenFramework\Database\Criteria;
-    use KaiokenFramework\Database\Record;
-    use KaiokenFramework\Database\Repository;
-
-    use KaiokenFramework\Page\Page;
-    use KaiokenFramework\Page\Action;
-
-    use KaiokenFramework\Components\Form\Form;
-    use KaiokenFramework\Components\Form\Text;
-    use KaiokenFramework\Components\Container\VBox;
-    use KaiokenFramework\Components\Wrapper\KaiokenFormWrapper;
-    use KaiokenFramework\Components\Dialog\Message;
-    use KaiokenFramework\Components\Form\Combo;
-    use KaiokenFramework\Components\Form\TextArea;    
-
-    use KaiokenFramework\Traits\EditTrait;
-    use KaiokenFramework\Traits\ReloadTrait;
-    use KaiokenFramework\Traits\SaveTrait;
-
-<h4>Criando Datagrid:</h4>
-
-    // Define o Active Record
-    $this->activeRecord = 'Cidade';
-    
-    // adiciona as colunas à Datagrid
-    $this->datagrid->addColumn($codigo);
-    $this->datagrid->addColumn($descricao);
-    $this->datagrid->addColumn($codigoIBGE);
-    $this->datagrid->addColumn($estado);
-
-    $this->datagrid->addAction( 'Editar',  new Action([new CidadeForm, 'onEdit']),   'IdCidade', 'fa fa-pencil');
-    $this->datagrid->addAction( 'Excluir', new Action([$this, 'onDelete']), 'IdCidade', 'fa fa-trash light');
-
-    // monta a página através de uma tabela
-    $box = new VBox;
-    $box->style = 'display:block';
-    $box->add($this->form);
-    $box->add($this->datagrid);
-    
-    parent::add($box);
-
-<h4>Criando Formulário:</h4>
-
-    $this->activeRecord = 'Cidade';
-
-    // instancia um formulário
-    $this->form = new KaiokenFormWrapper(new Form('form_cidades'));
-    $this->form->setTitle('Cadastro de Cidades');
-          
-    // cria os campos do formulário
-    $descricao = new Text('Descricao');
-    $descricao->id = "txtDescricao";
-    $descricao->maxlength = "100";
-
-    $estado    = new Combo('IdEstado');
-    $estado->id = "cbEstado";
-
-    // Abrindo Transação
-    Transaction::open();
-
-    // Buscando todos estados
-    $estados = Estado::all();
-
-    // Populando array
-    $items = array();
-
-    foreach ($estados as $obj_estado)
-    {
-        $items[$obj_estado->IdEstado] = $obj_estado->Descricao;
-    }
-    
-    // Fechando transação
-    Transaction::close();
-    
-    // Adicionando estados ao componente visual
-    $estado->addItems($items);
-
-    // Adicionando campos ao componente de formulário
-    $this->form->addField('Descrição', $descricao, '70%');
-    $this->form->addField('Estado', $estado, '70%');
-    
-    // Adicionando botões no formulário
-    $this->form->addAction('Salvar', new Action(array($this, 'onSave')));
-    $this->form->addAction('Cancelar', new Action(array($this, 'onEdit')));
-   
-    // monta a página através de uma tabela
-    $box = new VBox;
-    $box->style = 'display:block';
-    $box->add($this->form);
-
-    // Adicionando formulario para ser renderizado na pagina.
-    parent::add($box);
-
-</p>
 
 <h2>:star: Creditos</h2>
 <p>
