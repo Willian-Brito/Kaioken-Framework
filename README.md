@@ -157,7 +157,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
 
     use KaiokenFramework\Database\Record;
 
-    class Cidade extends Record
+    class User extends Record
     {
         const TABLENAME = 'User';
 
