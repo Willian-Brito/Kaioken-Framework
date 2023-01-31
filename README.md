@@ -6,37 +6,37 @@
 
 <h2>:point_right: Introdução</h2>
 <p>
-  <b>Kaioken</b> é um <b>framework</b> SSR (Server Side Rendering) focado em produtividade e segurança, muito facil de usar e foi construido na liguagem php na versão 8.2.1.
+  <b>Kaioken</b> é um <b>framework</b> SSR (Server Side Rendering) focado em produtividade e segurança, muito fácil de usar e foi construído na linguagem php na versão 8.2.1.
 
-  Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança da <b>Área do Contador</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde estou liderando o desenvolvimento.
+  Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança da <b>Área do Contador</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde sou responsável pelo desenvolvimento.
 
-  Neste <b>Framework</b> foi aplicado boas práticas de engenharia de software como <b>padrões de projetos</b> e princípios e práticas de <b>desenvolvimento seguro</b>.
+  Neste <b>Framework</b> foi aplicado boas práticas de engenharia de software como <b>padrões de projetos</b> e princípios e recomendações de <b>desenvolvimento seguro</b>.
 </p>
 
 <h2>:page_facing_up: Padrões de Projeto</h2>
 <p>
-Alguns padrões de projetos foi utilizado para a construção deste framework alguns foram baseados nos padrões do <b>GoF</b> e outros nos Padrões de Arquitetura de Aplicações Corporativas do <b>Martin Fowler</b>.
+Os padrões de projetos foram utilizados para a construção deste framework, são baseados nos padrões do <b>GoF</b> e outros nos Padrões de Arquitetura de Aplicações Corporativas do <b>Martin Fowler</b>.
 
 * <b>Connection.php:</b> Encapsula a conexão com o banco de dados configurado, implementa o padrão <b>Singleton</b>.
 	
-* <b>Transaction.php:</b> Utiliza o conceito de transação nas conexões com o banco de dados, implementa o padrão <b>Singleton</b>.
+* <b>Transaction.php:</b> Utiliza o conceito de transação nas conexões com o banco de dados e também implementa o padrão <b>Singleton</b>.
 	
 * <b>Record.php:</b> É uma classe abstrata que é um super tipo para toda uma camada de classes da aplicação, as classes filhas deste super tipo são chamadas de <b>ActiveRecord</b>, implementa o padrão <b>Layer Supertype</b>.
 
-* <b>Repository.php:</b> Um Repository, é uma camada que atua como um gerenciador de coleções, o objetivo desta classe é executar operações em lote sobre objetos, implementa o padrão <b>Repository</b>.
+* <b>Repository.php:</b> Um Repository, é uma camada que atua como um gerenciador de coleções, o objetivo desta classe é executar operações em lote sobre objetos, implementando o padrão <b>Repository</b>.
 
-* <b>Criteria.php:</b> Classe que define um critério de filtros de dados, ele armazena os filtros que será utilizado pelo repositório, esta classe implementa o padrão <b>QueryObject</b> que mantem uma maneira mais organizada de definir a consulta e tratamento dos valores passados pelo usuário, além de não precisa conhecer a linguagem SQL que será executada pelo banco.
+* <b>Criteria.php:</b> Classe que define um critério de filtros de dados, ele armazena os filtros que será utilizado pelo repositório, esta classe implementa o padrão <b>QueryObject</b> que mantém uma maneira mais organizada de definir a consulta e tratamento dos valores passados pelo usuário, além de não precisar conhecer a linguagem SQL que será executada pelo banco.
 
 * <b>Logs:</b> Nos logs do sistema foi implementado o padrão <b>Strategy</b>, onde tem uma família de algoritmos em classes separadas, que implementa logs do tipo texto, html e xml. 
 
-* <b>Wrappers:</b> O <b>Decorator ou Wrapper</b> é um padrão de projeto de software que permite adicionar um comportamento a um objeto já existente em tempo de execução, ou seja, agrega dinamicamente responsabilidades adicionais a um objeto, este padrão foi utilizado para adicionar aparência aos formularios e datagrids da aplicação a classe Form e Datarid contém os dados e as classes <b>KaiokenFormWrapper</b> e <b>KaiokenDatagridWrapper</b> contem toda a lógica de apresentação visual, utilizando este padrão caso queira alterar a aparência de sua aplicação basta desenvolver uma classe de apresentação visual exemplo <b>BootstrapFormWrapper</b> ou <b>MaterializeFormWrapper</b>.
+* <b>Wrappers:</b> O <b>Decorator</b> ou <b>Wrapper</b> é um padrão de projeto de software que permite adicionar um comportamento a um objeto já existente em tempo de execução, ou seja, agrega dinamicamente responsabilidades adicionais a um objeto, este padrão foi utilizado para adicionar aparência aos formulários e datagrids da aplicação a classe Form e Datarid contém os dados e as classes <b>KaiokenFormWrapper</b> e <b>KaiokenDatagridWrapper</b> contém toda a lógica de apresentação visual, utilizando este padrão caso queira alterar a aparência de sua aplicação basta desenvolver uma classe de apresentação visual exemplo <b>BootstrapFormWrapper</b> ou <b>MaterializeFormWrapper</b>.
 
-* <b>Trait:</b> Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construções de frameworks, basicamente traits são trechos de codigo (funcionalidades) que podem ser incorporado em classes. A vantagem é que as funcionalidades ficam em arquivos separados e vc utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o principio <b>DRY</b> e acaba facilitando a reutilização de codigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com multiplas funcionalidades e quebrar o principio <b>SRP do SOLID</b>.
+* <b>Trait:</b>  Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construção de frameworks, basicamente traits são trechos de código (funcionalidades) que podem ser incorporados em classes. A vantagem é que as funcionalidades ficam em arquivos separados e vc utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o princípio DRY e acaba facilitando a reutilização de códigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com múltiplas funcionalidades e quebrar o principio <b>SRP do SOLID</b>.
 </p>
 
 <h2>:shield: Segurança</h2>
 <p>
-Além de padrões de projetos, neste framework também foi utilizado principios e tecnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
+Além de padrões de projetos, neste framework também foi utilizado princípios e técnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
 
 Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS, CSRF</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
 
@@ -70,10 +70,11 @@ Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de seguran
 
 <h2>:technologist: Guia de Instalação</h2>
 <p>
-A seguir, os passos mínimos para instalar e configurar uma aplicação no Kaioken Framework. Este é um tutorial com recomendações genéricas, tanto para Linux e Windows.
+A seguir, os passos mínimos para instalar e configurar uma aplicação no Kaioken Framework. Este é um tutorial com recomendações genéricas, tanto para Linux quanto para Windows.
 
 <h4>:one: Instale o Apache</h4>
 Instale e configure o Apache2 (apache2.conf), altere as configurações do Apache para ele ler os .htaccess presentes na estrutura de diretório do Framework, que protegem determinados diretórios do acesso indevido.
+
 <br><br>
    
     AllowOverride All
@@ -358,5 +359,5 @@ As páginas controladoras de aplicação são salvas no diretório <b>app/Fronte
 
 <h2>:star: Creditos</h2>
 <p>
-  Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver a <b>Área do Contador</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adiquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b>.
+ Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver a <b>Área do Contador</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b>.
 </p>
