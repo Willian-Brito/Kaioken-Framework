@@ -46,13 +46,13 @@ Conforme o framework for evoluindo será adicionado mais mecanismos de seguranç
 
     session.name = KAIOKEN_SESSID
     session.cookie_domain="meusite.com.br"
+    session.name="KAIOKEN_SESSNAME"
     session.use_trans_sid = 0
     session.entropy_file = /dev/urandom
     session.entropy_length = 32
     session.cookie_httponly=On
     session.cookie_samesite="Strict"
     session.cookie_secure=On
-    session.name="KAIOKEN_SESSNAME"
     session.sid_bits_per_character=6
     session.sid_length=48
     session.use_only_cookies=On
@@ -105,6 +105,7 @@ Instale e configure o PHP.<br>
 
 <h4>:three: Estrutura da Aplicação</h4>
 Faça download do <b>Kaioken Framework</b> descompacte o template conforme o seu sistema e renomeie para o nome real de seu projeto:
+<br>
 
 * Ubuntu: /var/www/html/
 * Windows: C:\wamp64\www\
@@ -191,7 +192,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
 Criando páginas para formulários, listagens, e outros.
 Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. <br><br>
 
-As páginas controladoras de aplicação são salvas no diretório <b>app/Frontend/Page</b>. A classe deve conter o nome do a classe de Active Record que irá manipular os dados do formulário.
+As páginas controladoras de aplicação são salvas no diretório <b>app/Frontend/Page</b>. A classe deve conter o nome do a classe de <b>Active Record</b> que irá manipular os dados do formulário.
 
     <?php
 
