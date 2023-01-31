@@ -6,7 +6,7 @@
 
 <h2>:point_right: Introdução</h2>
 <p>
-  <b>Kaioken</b> é um <b>framework</b> focado em produtividade, segurança e performance, muito facil de usar e foi construido na liguagem php na versão 8.2.1.
+  <b>Kaioken</b> é um <b>framework</b> SSR (Server Side Rendering) focado em produtividade e segurança, muito facil de usar e foi construido na liguagem php na versão 8.2.1.
 
   Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança da <b>Área do Contador</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde estou liderando o desenvolvimento.
 
