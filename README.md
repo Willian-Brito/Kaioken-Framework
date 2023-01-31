@@ -38,7 +38,9 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 <p>
 Além de padrões de projetos, neste framework também foi utilizado princípios e técnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
 
-Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e mecanismos de proteção contra ataques de roubo de sessão, porém conforme a evolução do framework será adicionado mais mecanismos de segurança.
+Inicialmente foi aplicado proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e mecanismos de proteção contra <b>Session Hijacking</b> ou Ataques de Roubo de Sessão, onde ao utilizar a classe Session do framework uma boa prática é regerar o ID sa sessão ao logar e deslogar da aplicação.
+
+Conforme o framework for evoluindo será adicionado mais mecanismos de segurança.
 
 Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de segurança no gerenciamento de sessões:
 </p>
