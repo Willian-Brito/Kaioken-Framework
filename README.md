@@ -40,7 +40,7 @@ Além de padrões de projetos, neste framework também foi utilizado princípios
 
 Inicialmente foi aplicado mecanismos de proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e <b>Session Hijacking</b>, porém para implementar a proteção contra o ataque de roubo de sessão (Session Hijacking) de maneira correta ao utilizar a classe <b>Session</b> do framework é necessário regerar o ID da sessão ao logar e deslogar da aplicação.
 
-Conforme o framework for evoluindo será adicionado mais mecanismos de segurança. Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> de segurança no gerenciamento de sessões:
+Conforme o framework for evoluindo será adicionado mais mecanismos de segurança. Abaixo vamos deixar algumas configurações do arquivo <b>php.ini</b> para a segurança no gerenciamento de sessões:
 </p>
 
 
@@ -192,7 +192,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
 Criando páginas para formulários, listagens, e outros.
 Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. <br><br>
 
-As páginas controladoras de aplicação são salvas no diretório <b>app/Frontend/Page</b>. A classe deve conter o nome do a classe de <b>Active Record</b> que irá manipular os dados do formulário.
+As páginas controladoras de aplicação são salvas no diretório <b>app/Frontend/Page</b>. A classe deve conter o nome da classe de <b>Active Record</b> que irá manipular os dados do formulário.
 
     <?php
 
