@@ -36,7 +36,7 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 
 <h2>:shield: Segurança</h2>
 <p>
-Além de padrões de projetos, neste framework também foi utilizado princípios e técnicas de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
+Além de padrões de projetos, neste framework também foi utilizado princípios e recomendações de <b>desenvolvimento seguro</b> que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
 
 Inicialmente foi aplicado mecanismos de proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e <b>Session Hijacking</b>. 
 
