@@ -38,9 +38,7 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 <p>
 Além de padrões de projetos, neste framework também foi utilizado princípios e recomendações de <b>desenvolvimento seguro</b>, que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
 
-Inicialmente foi aplicado mecanismos de proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e <b>Session Hijacking</b>. 
-
-Porém para implementar a proteção contra o ataque de roubo de sessão (Session Hijacking) de maneira correta, é necessário ao logar e deslogar da aplicação, utilizar a classe <b>Session</b> do framework para <b>regerar o ID</b> da sessão. 
+Inicialmente foi aplicado mecanismos de proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e <b>Session Hijacking</b>, porém para implementar a proteção contra o ataque de roubo de sessão (Session Hijacking) da maneira correta, é necessário ao logar e deslogar da aplicação, utilizar a classe <b>Session</b> do framework para <b>regerar o ID</b> da sessão. 
 
     public function logout()
     {
