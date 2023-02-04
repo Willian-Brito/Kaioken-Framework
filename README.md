@@ -40,7 +40,7 @@ Além de padrões de projetos, neste framework também foi utilizado princípios
 
 Inicialmente foi aplicado mecanismos de proteções contra <b>SQL Injection, XSS (Cross Site Script), CSRF (Cross Site Request Forgery)</b> e <b>Session Hijacking</b>. 
 
-Porém para implementar a proteção contra o ataque de roubo de sessão (Session Hijacking) de maneira correta, é necessário ao logar e deslogar da aplicação, utilizar a classe <b>Session</b> do framework para regerar o ID da sessão, nesta rotina o ID anterior é <b>destruído</b> e um <b>novo</b> ID é criado. 
+Porém para implementar a proteção contra o ataque de roubo de sessão (Session Hijacking) de maneira correta, é necessário ao logar e deslogar da aplicação, utilizar a classe <b>Session</b> do framework para <b>regerar o ID</b> da sessão. 
 
     public function logout()
     {
