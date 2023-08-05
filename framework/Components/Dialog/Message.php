@@ -3,6 +3,7 @@
 namespace KaiokenFramework\Components\Dialog;
 
 use KaiokenFramework\Components\Base\Element;
+use KaiokenFramework\Components\Base\JScript;
 
 /**
  * Exibe mensagens ao usuário
@@ -66,7 +67,8 @@ class Message
 
     function fecharMsg($time)
     {
-        echo "<script> setTimeout(function(){ CloseAlert(); $('.close-alert').trigger('click') }, {$time}); </script>";        
+        $script = "CloseAlert(); $('.close-alert').trigger('click')";
+        JScript::run($script, $time);
     }
     #endregion
 
@@ -74,13 +76,8 @@ class Message
 
     function focus($IdFoco)
     {
-        echo "<script> 
-                setTimeout(function(){ 
-                    $('.close-alert').on('click', function(){ 
-                        $('$IdFoco').focus(); 
-                    })
-                }, 100); 
-              </script>";
+        $script = "$('.close-alert').on('click', function(){ $('$IdFoco').focus(); })";
+        JScript::run($script, 100);
     }
     #endregion
 

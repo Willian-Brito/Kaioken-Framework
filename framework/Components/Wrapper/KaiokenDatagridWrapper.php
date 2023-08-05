@@ -123,6 +123,7 @@ class KaiokenDatagridWrapper
         
         $actions = $this->decorated->getActions();
         $columns = $this->decorated->getColumns();
+        $checkBox = $this->decorated->getCheckBox();
 
         #region Actions
 
@@ -136,6 +137,16 @@ class KaiokenDatagridWrapper
                 $celula->width = '48px';
                 $row->add($celula);
             }
+        }
+        #endregion
+
+        #region CheckBox
+        if($checkBox)
+        {
+            $celula = new Element('th');
+            $celula->style = "min-width: 25px; max-width: 25px;";
+            $celula->width = '25px';
+            $row->add($celula);
         }
         #endregion
         
@@ -155,7 +166,8 @@ class KaiokenDatagridWrapper
                 
                 $celula = new Element('th');
                 $celula->add($label);
-                $celula->style = "text-align: {$align}; min-width: {$width}; max-width: {$width}; white-space: nowrap;";
+                $celula->style = "font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: {$width}; max-width: {$width};";
+                // $celula->style = "text-align: {$align}; min-width: {$width}; max-width: {$width}; white-space: nowrap;";
                 $celula->width = $width;
                 $row->add($celula);                
     
@@ -281,7 +293,7 @@ class KaiokenDatagridWrapper
                 $function = $column->getTransformer();
                 $data     = $item->$name;
                 
-                if(!empty($data))
+                if(!empty($data) || $data === 0)
                 {
                     $value = htmlspecialchars($data, double_encode:false);
 
@@ -293,7 +305,9 @@ class KaiokenDatagridWrapper
                     }
                     
                     $element = new Element('td');
+                    $element->id = $name;
                     $element->title = $value;
+                    $element->value = $value;
                     $element->add($value);
                     $element->align = $align;
 
@@ -305,16 +319,21 @@ class KaiokenDatagridWrapper
                 }                
             }
 
+            #region Ultima Celula
             if(!empty($data))
             {
-                 #region Ultima Celula
                 $element = new Element('td');
                 $element->style = "width: 100%;";
                 $row->add($element);
-                #endregion
+            }  
+            
+            if(!$CheckBox)
+            {
+                $element = new Element('td');
+                $element->style = "width: 100%;";
+                $row->add($element);
             }
-
-           
+            #endregion
         }
         #endregion
     }

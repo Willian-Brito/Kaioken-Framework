@@ -4,6 +4,7 @@ namespace KaiokenFramework\Components\Dialog;
 
 use KaiokenFramework\Page\Action;
 use KaiokenFramework\Components\Base\Element;
+use KaiokenFramework\Components\Base\JScript;
 
 /**
  * Exibe perguntas ao usuário
@@ -54,5 +55,17 @@ class Question
 
         $div->show();
     }
+    #endregion
+
+    #region Metodos
+
+    #region redirect
+    public static function redirect($class) 
+    {
+        $link = "index.php?class=$class";
+        JScript::redirect($link, 1000);
+    }
+    #endregion
+
     #endregion
 }

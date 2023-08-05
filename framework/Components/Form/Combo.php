@@ -51,6 +51,7 @@ class Combo extends Field implements IFormElement
         $tag->style = "width:{$this->size}"; // tamanho em pixels
         
         // cria uma TAG <option> com um valor padrão
+        $cont = 1;
         $option = new Element('option');
         $option->add('SELECIONE');
         $option->value = '0';    // valor da TAG
@@ -62,11 +63,17 @@ class Combo extends Field implements IFormElement
             // percorre os itens adicionados
             foreach ($this->items as $chave => $item)
             {
+                
                 // cria uma TAG <option> para o item
                 $option = new Element('option');
                 $option->value = $chave; // define o índice da opção
                 $option->add($item);     // adiciona o texto da opção
                 
+                if ($cont == 1)
+                {
+                    $option->selected = 1;
+                }
+
                 // caso seja a opção selecionada
                 if ($chave == $this->value)
                 {
@@ -75,6 +82,7 @@ class Combo extends Field implements IFormElement
                 } 
                 // adiciona a opção à combo
                 $tag->add($option);
+                $cont++;
             }
         } 
         

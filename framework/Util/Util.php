@@ -10,19 +10,66 @@ class Util
 {
     #region Metodos
 
+    #region mask
+    /**
+     * Retorna qualquer tipo de mascara
+     * @param $valor = cnpj, cpf, cep, data
+     * @param $mascaral = ##.###.###/####-##
+     */
+    public static function mask($val, $mask)
+    {
+        $maskared = '';
+        $k = 0;
+
+        for($i = 0; $i<=strlen($mask)-1; $i++)
+        {
+            if($mask[$i] == '#')
+            {
+                if(isset($val[$k]))
+                    $maskared .= $val[$k++];
+            }
+            else
+            {
+                if(isset($mask[$i]))
+                    $maskared .= $mask[$i];
+            }
+        }
+        return $maskared;
+    }
+    #endregion
+
     #region validaData
     public static function validaData($date) 
     {
         $data = explode("/","$date");
-        $d = $data[0];
-        $m = $data[1];
-        $y = $data[2];
 
-        $res = checkdate($m,$d,$y);
-        if ($res == 1)
-            return true;
+        if(count($data) > 1)
+        {
+
+            $d = $data[0];
+            $m = $data[1];
+            $y = $data[2];
+    
+            $res = checkdate($m,$d,$y);
+            if ($res == 1)
+                return true;
+            else
+                return false;
+        }
         else
-            return false;
+        {
+            $data = explode("-","$date");
+
+            $y = $data[0];
+            $m = $data[1];
+            $d = $data[2];
+    
+            $res = checkdate($m,$d,$y);
+            if ($res == 1)
+                return true;
+            else
+                return false;
+        }
     }
     #endregion
 
@@ -217,6 +264,28 @@ class Util
     }
     #endregion
 
+    #region getInt
+    public static function getInt($value)
+    {
+        if(!empty($value))
+        {
+            return intval($value);
+        }
+
+        return false;
+    }
+    #endregion
+
+    #region formataMoeda
+    public static function formataMoeda($value, $casasDecimais = 2)
+    {
+        if(!empty($value))
+        {
+            return number_format($value, $casasDecimais,',', '.');
+        }
+    }
+    #endregion
+
     #region formataTelefone
     public static function formataTelefone($telefone)
     {
@@ -254,7 +323,10 @@ class Util
     {
         $cpf = self::limpaFormatacao($cpf);
 
-        $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+        if(!empty($cpf))
+        {
+            $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+        }
 
         return $cpf;
     }
@@ -265,7 +337,10 @@ class Util
     {
         $cnpj = self::limpaFormatacao($cnpj);
 
-        $cnpj = substr($cnpj, 0, 2) . '.' . substr($cnpj, 2, 3) . '.' . substr($cnpj, 5, 3) . '/' . substr($cnpj, 8, 4) . '-' . substr($cnpj, 12, 2);
+        if(!empty($cnpj))
+        {
+            $cnpj = substr($cnpj, 0, 2) . '.' . substr($cnpj, 2, 3) . '.' . substr($cnpj, 5, 3) . '/' . substr($cnpj, 8, 4) . '-' . substr($cnpj, 12, 2);
+        }
 
         return $cnpj;
     }
@@ -279,6 +354,17 @@ class Util
         $rg = substr($rg, 0, 2) . '.' . substr($rg, 2, 3) . '.' . substr($rg, 5, 3);
 
         return $rg;
+    }
+    #endregion
+
+    #region formataCNPJ
+    public static function formataCEP($cep)
+    {
+        $cep = self::limpaFormatacao($cep);
+
+        $cep = substr($cep, 0, 5) . '-' . substr($cep, 5, 3);
+
+        return $cep;
     }
     #endregion
 

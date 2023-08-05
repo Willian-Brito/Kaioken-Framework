@@ -125,6 +125,84 @@ abstract class Record implements IRecord
 
     #endregion
 
+    #region [:] Estáticos
+
+    #region executeFunction
+    public static function executeFunction($function, $params)
+    {
+        if($conn = Transaction::get())
+        {
+            $paramString = self::prepareParams($params);
+            $sql = "SELECT $function($paramString)";
+
+            $cmd = $conn->prepare($sql);
+
+            foreach($params as $key => $value)
+            {
+                $cmd->bindValue(":$key", $value);
+            }
+
+            $cmd->execute();
+
+            return $cmd->fetch();
+        }
+
+        throw new Exception('Não há transação ativa');        
+    }
+    #endregion
+
+    #region executeProcedure
+    public static function executeProcedure($procedure, $params)
+    {
+        if($conn = Transaction::get())
+        {
+            $paramString = self::prepareParams($params);
+            $sql = "CALL $procedure($paramString)";
+
+            $cmd = $conn->prepare($sql);
+
+            foreach($params as $key => $value)
+            {
+                $cmd->bindValue(":$key", $value);
+            }
+
+            $cmd->execute();
+
+            return $cmd->fetchAll();
+        }
+
+        throw new Exception('Não há transação ativa');        
+    }
+    #endregion
+
+    #region prepareParams
+    private static function prepareParams($params)
+    {
+        $out = "";
+
+        if(!empty($params))
+        {
+            $ultimoValor = end($params);
+            $ultimaKey = key($params);
+    
+            foreach($params as $key => $value)
+            {
+                if($key == $ultimaKey)
+                {
+                    $out .= ":$key";
+                    break;
+                }
+                
+                $out .= ":$key,";
+            }
+        }
+
+        return $out;
+    }
+    #endregion
+
+    #endregion
+
     #region [+] Publicos
 
     #region fromArray
@@ -337,7 +415,10 @@ abstract class Record implements IRecord
 
             for($i = 0; $i < count($this->prepared[2]); $i++)
             {
-                $cmd->bindValue("{$this->prepared[2][$i]}", $this->prepared[3][$i]);
+                $column = $this->prepared[2][$i];
+                $value = $this->prepared[3][$i];
+
+                $cmd->bindValue("{$column}", $value);
             }
 
             return $cmd;
@@ -370,8 +451,11 @@ abstract class Record implements IRecord
             #region Atribui Parametro do Comando SET
             for($i = count($this->prepared[1]) -1; $i >= 0; $i--)
             {
-                $cmd->bindValue("{$this->prepared[1][$i]}", $this->prepared[2][$i]);
-                $this->query = str_replace("{$this->prepared[1][$i]}","{$this->prepared[2][$i]}", $this->query);
+                $column = $this->prepared[1][$i];
+                $value = $this->prepared[2][$i];
+
+                $cmd->bindValue("{$column}", $value);
+                $this->query = str_replace("{$column}","{$value}", $this->query);
             }
             #endregion
             

@@ -1,5 +1,6 @@
 <?php
 
+#region Imports
 namespace KaiokenFramework\Traits;
 
 use KaiokenFramework\Page\Action;
@@ -8,7 +9,13 @@ use KaiokenFramework\Components\Dialog\Message;
 use KaiokenFramework\Components\Dialog\Question;
 
 use Exception;
+use KaiokenFramework\Components\Base\JScript;
+use KaiokenFramework\Feature\FeatureFlag;
 use KaiokenFramework\Log\LoggerTXT;
+use KaiokenFramework\Security\Auth;
+use KaiokenFramework\Session\Session;
+use Usuario;
+#endregion
 
 trait DeleteTrait
 {
@@ -43,7 +50,9 @@ trait DeleteTrait
     function Delete($param)
     {
         try
-        {            
+        {
+            #region Objetos
+
             Transaction::open();
             // Transaction::setLogger(new LoggerTXT("Backend/Tmp/logSQL.txt"));
             
@@ -54,6 +63,26 @@ trait DeleteTrait
 
             $id = $param[$IdTabela];
             $object = $class::find($id);
+            #endregion
+
+            #region Validação
+
+            Auth::Authorization($object, $id);
+
+            if($id == Usuario::getIdUsuarioSuporte() && $IdTabela == "IdUsuario")
+                throw new Exception("Não é possível excluir o usuário 'suporte'");
+            #endregion
+
+            #region Delete
+
+            if($object instanceof Usuario)
+            {
+                FeatureFlag::para($object->IdUsuario)->removeFeatures();
+
+                if(!empty($object->FotoPerfil))
+                    unlink($object->FotoPerfil);
+            }
+            
             $object->delete();
 
             Transaction::close();
@@ -63,6 +92,7 @@ trait DeleteTrait
             
             new Message('success', "Registro excluído com sucesso");
             $this->redirect($param['class']);
+            #endregion
         }
         catch (Exception $e)
         {
@@ -75,14 +105,16 @@ trait DeleteTrait
     #region fecharMsg
     function fecharMsg()
     {
-        echo "<script> $('.question').hide(); </script>";
+        $script = "$('.question').hide();";
+        JScript::run($script);
     }
     #endregion
 
     #region redirect
     function redirect($class) 
     {
-        echo "<script>setTimeout(function(){ window.location = 'index.php?class=$class'; }, 1000); </script>";
+        $link = "index.php?class=$class";
+        JScript::redirect($link, 1000);
     }
     #endregion
 

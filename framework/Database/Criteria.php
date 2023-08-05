@@ -12,6 +12,7 @@ class Criteria
 
     private $filters;        // Armazena a lista de filtros
     private $properties;
+    private static $paramCounter;
     #endregion
     
     #region Constantes
@@ -20,6 +21,7 @@ class Criteria
     const OP_COMPARACAO = 1; // Posição do OPERADOR DE COMPARAÇÂO no vetor de filtros
     const VALOR = 2;         // Posição do VALOR no vetor de filtros
     const OP_LOGICO = 3;     // Posição do OPERADOR LÓGICO no vetor de filtros
+    const PAR_RAND = 4;      // Posição de PARAMETROS RANDÔMICOS no vetor de filtros
     #endregion
 
     #region Construtor
@@ -35,7 +37,9 @@ class Criteria
    
     #region Metodos
 
-    #region add
+    #region [+] Public
+
+     #region add
 
     /**
      * Adiciona uma expressão ao critério
@@ -51,7 +55,8 @@ class Criteria
             $logic_operator = NULL;        
         
         // $this->filters[] = [$variable, $compare_operator, $this->transform($value), $logic_operator];
-        $this->filters[] = [$variable, $compare_operator, $value, $logic_operator];
+        $paramRandom = $this->getPreparedVars($variable);
+        $this->filters[] = [$variable, $compare_operator, $value, $logic_operator, $paramRandom];
     }
     #endregion
 
@@ -76,23 +81,6 @@ class Criteria
     }
     #endregion
 
-    #region prepareFilters
-    private function prepareFilters()
-    {
-        $query = "";
-
-        foreach ($this->filters as $filter)
-        {
-            $query .= $filter[self::OP_LOGICO] . ' ' . 
-                      $filter[self::CAMPO] . ' ' . 
-                      $filter[self::OP_COMPARACAO] . ' '. 
-                      ' :' . $filter[self::CAMPO] . ' ';
-        }
-
-        return $query;
-    }
-    #endregion
-
     #region prepareBinds
     public function prepareBinds($cmd)
     {
@@ -100,7 +88,11 @@ class Criteria
 
         foreach($this->filters as $filter)
         {
-            $command->bindValue(":{$filter[self::CAMPO]}", $filter[self::VALOR] );
+            // $column = $filter[self::CAMPO];
+            $column = $filter[self::PAR_RAND];
+            $value = $filter[self::VALOR];
+
+            $command->bindValue($column, $value);
         }
 
         return $command;
@@ -115,7 +107,12 @@ class Criteria
 
         foreach ($this->filters as $filter)
         {
-            $result = str_replace(":{$filter[self::CAMPO]}","{$filter[self::VALOR]}", $result);
+            // $column = $filter[self::CAMPO];
+            $column = $filter[self::PAR_RAND];
+            $value = $filter[self::VALOR];
+
+            // $result = str_replace(":{$column}","{$value}", $result);
+            $result = str_replace($column,"{$value}", $result);
         }
 
         return $result;
@@ -154,6 +151,50 @@ class Criteria
         {
             return $this->properties[$property];
         }
+    }
+    #endregion
+
+    #endregion
+
+    #region [-] Private
+
+    #region prepareFilters
+    private function prepareFilters()
+    {
+        $query = "";
+
+        foreach ($this->filters as $filter)
+        {
+            $query .= $filter[self::OP_LOGICO] . ' ' . 
+                        $filter[self::CAMPO] . ' ' . 
+                        $filter[self::OP_COMPARACAO] . ' '. 
+                    //   ' :' . $filter[self::CAMPO] . ' ';
+                        $filter[self::PAR_RAND] . ' ';
+        }
+
+        return $query;
+    }
+    #endregion
+
+    #region getPreparedVars
+    /**
+     * Return the prepared vars
+     */
+    private function getPreparedVars($variable)
+    {
+        $paramRandom = ' :par_'.$this->getRandomParameter() . '_' . $variable . ' ';
+        return trim($paramRandom);
+    }
+    #endregion
+
+    #region getRandomParameter
+    /**
+     * Retorna parametro randômico
+     */
+    private function getRandomParameter()
+    {
+        self::$paramCounter ++;
+        return self::$paramCounter;
     }
     #endregion
 
@@ -211,6 +252,8 @@ class Criteria
 
         return $result;
     }
+    #endregion
+
     #endregion
 
     #endregion

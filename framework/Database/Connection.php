@@ -83,7 +83,7 @@ final class Connection
             #region MySQL
             case 'mysql':
                 $port = $port ? $port : '3306';
-                $conn = new PDO("mysql:host={$host};port={$port};dbname={$name}", $user, $pass);
+                $conn = new PDO("mysql:host={$host};port={$port};dbname={$name};charset=utf8", $user, $pass);
                 break;
             #endregion
 

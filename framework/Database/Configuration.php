@@ -4,6 +4,7 @@ namespace KaiokenFramework\Database;
 
 use Exception;
 use KaiokenFramework\Security\Cryptography;
+use KaiokenFramework\Session\Session;
 
 /**
  * Lê arquivo de configurações para conexão com banco de dados
@@ -12,7 +13,7 @@ use KaiokenFramework\Security\Cryptography;
 class Configuration
 {
     #region Propriedades da Classe
-    private static $config;   // instância ativa
+
     const ARQUIVO_CONFIG = "Backend/Config/Msystem.ini";
     #endregion
 
@@ -30,16 +31,16 @@ class Configuration
 
     #region getInstance
     public static function getInstance()
-    {
-        $EhPrimeiraVez = empty(self::$config);
-
+    { 
+        $EhPrimeiraVez = empty(Session::getValue("Database"));
+        
         if($EhPrimeiraVez)
         {
-            self::$config = self::open();
-            return self::$config;
+            Session::setValue("Database", self::open());
+            return Session::getValue("Database");
         }
 
-        return self::$config;
+        return Session::getValue("Database");
     }
     #endregion
 
