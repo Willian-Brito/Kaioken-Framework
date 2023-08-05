@@ -8,7 +8,7 @@
 <p>
   <b>Kaioken</b> é um <b>framework</b> SSR (Server Side Rendering) focado em produtividade e segurança, muito fácil de usar e foi construído na linguagem PHP na versão 8.2.1.
 
-  Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança no desenvolvimento da <b>MS Accounting</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde sou responsável pelo desenvolvimento.
+  Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança no desenvolvimento do <b>MS Accounting</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde sou responsável pelo desenvolvimento.
 
   Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>padrões de projetos</b>.
 </p>
@@ -368,5 +368,5 @@ As páginas controladoras de aplicação são salvas no diretório <b>app/Fronte
 
 <h2>:star: Creditos</h2>
 <p>
- Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver a <b>MS Accounting</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b>.
+ Quero agradecer a empresa <b>MSystem</b> pela oportunidade de desenvolver o <b>MS Accounting</b> e dar os créditos ao professor <b>Pablo Dall'Oglio</b> pelo excelente curso <b>(PHP - Programando com Orientação a Objetos e Design Patterns)</b> onde muitas funcionalidades deste framework foi inspirada nos ensinamentos adquiridos neste excelente curso e também agradecer ao professor <b>Alcyon Junior</b> pelo fantástico curso <b>Desenvolvimento Seguro Avançado,</b> onde me deu vários insights para aplicar <b>técnicas de desenvolvimento seguro</b>.
 </p>
