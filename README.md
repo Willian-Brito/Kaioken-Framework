@@ -13,7 +13,7 @@
   Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>padrões de projetos</b>.
 </p>
 
-<h2>:page_facing_up: Padrões Arquiteturais e de Projeto</h2>
+<h2>:page_facing_up: Padrões Arquiteturais e Projeto</h2>
 <p>
 Os padrões de projetos que foram utilizados para a construção deste framework, são baseados no livro <b>"Padrões de Projeto: Soluções reutilizáveis de software orientado a objetos"</b> do <b>GoF</b> e <b>"Padrões de Arquitetura de Aplicações Corporativas"</b> do <b>Martin Fowler</b>.
 
