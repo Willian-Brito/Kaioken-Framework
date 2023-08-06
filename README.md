@@ -34,6 +34,13 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 * <b>Trait:</b>  Traits não são padrões de projetos, porém é um recurso incrível do PHP que é muito utilizado na construção de frameworks, basicamente traits são trechos de código (funcionalidades) que podem ser incorporados em classes. A vantagem é que as funcionalidades ficam em arquivos separados e você utiliza apenas quando precisar dessas funções, isso possibilita que não violamos o princípio <b>DRY (Don´t Repeat Yourself)</b> e acaba facilitando a reutilização de códigos, outra vantagem é que não colocamos esse código em classes utilitárias para não inflar com múltiplas funcionalidades e quebrar o principio <b>SRP (Single Pesponsibility Principle)</b> do <b>SOLID</b>.
 </p>
 
+<h2>:open_file_folder: Estrutura</h2>
+<p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/framework/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
+</div>
+</p>
+
 <h2>:shield: Segurança</h2>
 <p>
 Além de padrões de projetos, neste framework também foi utilizado princípios e recomendações de <b>desenvolvimento seguro</b>, que possui como ﬁnalidade introduzir camadas de proteção contra os ataques cibernéticos.
@@ -67,14 +74,6 @@ Conforme o framework for evoluindo será adicionado mais mecanismos de seguranç
     session.use_strict_mode=On
     session.use_trans_sid=Off
     session.gc_maxlifetime = 14000
-
-
-<h2>:open_file_folder: Estrutura</h2>
-<p>
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/framework/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
-</div>
-</p>
 
 <h2>:technologist: Guia de Instalação</h2>
 <p>
