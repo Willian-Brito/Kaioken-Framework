@@ -11,7 +11,7 @@ class Session
     #region Construtor
 
     /**
-     * Não podem existir instâncias de Connection
+     * Não podem existir instâncias de Session
     */
     private function __construct() {}
     #endregion
