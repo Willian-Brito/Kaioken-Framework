@@ -1,0 +1,191 @@
+[
+    {
+        "name": "pablodalloglio/ole",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pablodalloglio/ole.git",
+            "reference": "b5698257fc21f3a8734c63c9224df9c48cba8d6f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pablodalloglio/ole/zipball/b5698257fc21f3a8734c63c9224df9c48cba8d6f",
+            "reference": "b5698257fc21f3a8734c63c9224df9c48cba8d6f",
+            "shasum": ""
+        },
+        "time": "2018-04-26T14:25:39+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "OLE": "./"
+            }
+        },
+        "include-path": [
+            "./"
+        ],
+        "license": [
+            "PHP"
+        ],
+        "authors": [
+            {
+                "email": "schmidt@php.net",
+                "name": "Christian Schmidt",
+                "role": "Lead"
+            },
+            {
+                "email": "xnoguer@php.net",
+                "name": "Xavier Noguer",
+                "role": "Lead"
+            }
+        ],
+        "description": "More info available on: http://pear.php.net/package/OLE",
+        "support": {
+            "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=OLE",
+            "source": "https://github.com/pablodalloglio/OLE"
+        }
+    },
+    {
+        "name": "pablodalloglio/spreadsheet_excel_writer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pablodalloglio/spreadsheet_excel_writer.git",
+            "reference": "84e5c1a4aa9b93ba1750c33ece6ae25eb19d2851"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pablodalloglio/spreadsheet_excel_writer/zipball/84e5c1a4aa9b93ba1750c33ece6ae25eb19d2851",
+            "reference": "84e5c1a4aa9b93ba1750c33ece6ae25eb19d2851",
+            "shasum": ""
+        },
+        "require": {
+            "pablodalloglio/ole": "*",
+            "php": ">=5.3.3"
+        },
+        "time": "2018-04-26T14:06:36+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Spreadsheet": ""
+            }
+        },
+        "autoload-dev": {
+            "psr-0": {
+                "Test": "test"
+            }
+        },
+        "include-path": [
+            "./"
+        ],
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "email": "cschmitz@limesurvey.org",
+                "name": "Carsten Schmitz",
+                "role": "Lead"
+            },
+            {
+                "email": "xnoguer@php.net",
+                "name": "Xavier Noguer",
+                "role": "Lead"
+            },
+            {
+                "email": "progi1984@gmail.com",
+                "name": "Franck Lefevre",
+                "role": "Developer"
+            },
+            {
+                "email": "tuupola@appelsiini.net",
+                "name": "Mika Tuupola",
+                "role": "Developer"
+            }
+        ],
+        "description": "More info available on: http://pear.php.net/package/Spreadsheet_Excel_Writer",
+        "support": {
+            "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Spreadsheet_Excel_Writer",
+            "source": "https://github.com/pear/Spreadsheet_Excel_Writer"
+        }
+    },
+    {
+        "name": "phprtflite/phprtflite",
+        "version": "v1.3.3",
+        "version_normalized": "1.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phprtflite/PHPRtfLite.git",
+            "reference": "eef76d965fc7a0cb4c7342f229f67ad4793c61c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phprtflite/PHPRtfLite/zipball/eef76d965fc7a0cb4c7342f229f67ad4793c61c2",
+            "reference": "eef76d965fc7a0cb4c7342f229f67ad4793c61c2",
+            "shasum": ""
+        },
+        "time": "2014-07-04T19:43:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPRtfLite": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Steffen Zeidler",
+                "email": "sigma_z@sigma-scripts.de"
+            }
+        ],
+        "description": "PHPRtfLite is an API enabling developers to create rtf documents with php."
+    },
+    {
+        "name": "setasign/fpdf",
+        "version": "1.8.1",
+        "version_normalized": "1.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Setasign/FPDF.git",
+            "reference": "2c68c9e6c034ac3187d25968790139a73184cdb1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Setasign/FPDF/zipball/2c68c9e6c034ac3187d25968790139a73184cdb1",
+            "reference": "2c68c9e6c034ac3187d25968790139a73184cdb1",
+            "shasum": ""
+        },
+        "time": "2016-01-01T17:47:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "fpdf.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "no usage restriction"
+        ],
+        "authors": [
+            {
+                "name": "Olivier Plathey",
+                "email": "oliver@fpdf.org",
+                "homepage": "http://fpdf.org/"
+            }
+        ],
+        "description": "FPDF is a PHP class which allows to generate PDF files with pure PHP. F from FPDF stands for Free: you may use it for any kind of usage and modify it to suit your needs.",
+        "homepage": "http://www.fpdf.org",
+        "keywords": [
+            "fpdf",
+            "pdf"
+        ]
+    }
+]
