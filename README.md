@@ -21,11 +21,23 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 	
 * <b>Transaction.php:</b> Utiliza o conceito de transação nas conexões com o banco de dados e também implementa o padrão <b>Singleton</b>.
 	
-* <b>Record.php:</b> É uma classe abstrata que é um super tipo para toda uma camada de classes da aplicação, as classes filhas deste super tipo são chamadas de <b>ActiveRecord</b>, implementa o padrão <b>Layer Supertype</b>.
+* <b>Record.php:</b> É uma classe abstrata responsável pelas operações do banco de dados (select, insert, update e delete) e também é um super tipo para toda uma camada de classes da camada Model inspirado no padrão <b>Layer Supertype</b>, as classes filhas deste super tipo são chamadas de <b>ActiveRecord</b>, pois elas implementam comporamentos de regras de negócios e operações de banco de dados por meio de herança.
 
 * <b>Repository.php:</b> Um Repository, é uma camada que atua como um gerenciador de coleções, o objetivo desta classe é executar operações em lote sobre objetos, implementando o padrão <b>Repository</b>.
 
-* <b>Criteria.php:</b> Classe que define um critério de filtros de dados, ele armazena os filtros que será utilizado pelo repositório, esta classe implementa o padrão <b>QueryObject</b> que mantém uma maneira mais organizada de definir a consulta e tratamento dos valores passados pelo usuário, além de não precisar conhecer a linguagem SQL que será executada pelo banco.
+* <b>Criteria.php:</b> Classe que define um critério de filtros de dados encapsulando as consultas de banco de dados em objetos reutilizáveis, ele armazena os filtros que será utilizado pelo repositório, esta classe implementa o padrão <b>QueryObject</b> que mantém uma maneira mais organizada de definir a consulta e tratamento dos valores passados pelo usuário, além de não precisar conhecer a linguagem SQL que será executada pelo banco.
+
+* <b>Router.php</b>: Aplicando o padrão <b>Front Controller</b> esse componente centraliza o gerenciamento das requisições em um único ponto de entrada e direciona as solicitações para as camadas apropriadas com base na rota ou URL. 
+
+* <b>Page.php</b>: Manipula a navegação e ações de todas as telas da aplicação, processando e direcionando as requisições dos usuários para as telas apropriadas, utilizando o padrão <b>Application Controller</b> visando centralizar o tratamento do ﬂuxo da aplicação.
+
+* <b>Template.php</b>: A idéia básica do Template.php é quando a página é usada para atender uma solicitação, os marcadores estáticos no template padrão da aplicação, são substituídos pelo resultado de algum processamento, como uma consulta em um banco de dados ou algum cálculo feito pelo back-end, o Template.php utiliza o padrão <b>Template View</b> para implementar essa funcionalidade.
+
+* <b>Element.php</b>: Classe responsável por processar os dados do domínio elemento por elemento e transformá-los em código HTML. Utilizando o padrão <b>Transform View</b> ele percorre uma coleção de dados do domínio (por exemplo, uma lista de objetos) e para cada elemento da coleção, aplica a lógica para gerar o código HTML correspondente.
+
+* <b>Components</b>: Implementando o padrão <b>Two-Step View</b> a idéia da camada de componentes é transformar dados do domínio em HTML em duas etapas: primeiro formando algum tipo de página lógica e depois representando essa página lógica em componentes HTML para ser enviado ao navegador. A classe <b>Field.php</b> possui apenas dados e servirá como base para componentes mais específicos (text, label, check box, combo box e etc...), e a parte visual é implementada pelas classes filhas.
+
+* <b>Session.php</b>: Esta Classe é responsável por gerenciar e armazenar as informações de estado relacionadas a uma sessão especíﬁca do usuário, implementando o padrão <b>Server Session State</b>.
 
 * <b>Logs:</b> Nos logs do sistema foi implementado o padrão <b>Strategy</b>, onde tem uma família de algoritmos em classes separadas, que implementa logs do tipo texto, html e xml. 
 
