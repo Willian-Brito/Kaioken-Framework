@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Frontend/assets/img/logo-title.ico" type="image/x-icon">
+
+    <title>MS Accounting</title>
+
+    <!-- MATERIAL ICONS CDN --->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- KAIOKEN FRAMEWORK CSS -->
+    <link href="Frontend/assets/css/kaioken-framework.css" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- JQUERY -->
+	<script src='Frontend/assets/js/jquery.js'></script>
+    <script src="Frontend/assets/js/jquery.mask.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container" id="container">
+
+        <!-- ============== BARRA LATERAL ============== -->
+        <aside id="nav-bar">
+            <!-- TOPO -->
+            <div class="topo">
+
+                <div class="logo">
+                    <div>
+                        <img id="BtnLogo" src="Frontend/assets/img/logo-menu1.png"
+                        alt="Logo da Empresa Msystem o M é azul o sys é laranja e o tem é azul">
+                    </div>
+                </div>
+
+                <div class="fechar" id="btn-fechar">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <!-- BARRA LATERAL -->
+            <div class="barra-lateral"> {Sidebar} </div>
+
+        </aside>        
+        
+        <!-- ============== MAIN ============== -->
+        <main>
+
+            <!-- INICIO CABECALHO -->
+            <div class="cabecalho"> {Header} </div>
+
+            <!-- CONTEÚDO -->
+            <div class="conteudo"> {content} </div>
+
+        </main>
+
+        <!-- ============== RODAPÉ ============== -->
+        <footer> {Footer} </footer>
+
+    </div>
+
+    <!-- KAIOKEN FRAMEWORK JS -->
+    <script src="Frontend/assets/js/kaioken-framework.js"> </script>
+    <div id="result"></div>
+    <div id="ajax_load"></div>
+
+</body>
+
+</html>
