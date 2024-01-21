@@ -189,10 +189,9 @@ Primeiramente vamos iniciar gerando o <b>script</b> de estrutura do banco de dad
 
     php GerarScriptAtualizacao.php
 
-Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir este arquivo e executar no banco de dados. Geralmente no banco MySQL ou MariaDB o login padrão é root e senha <b>mysql</b> 
+Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir este arquivo e executar no banco de dados. Geralmente no banco MySQL ou MariaDB o login padrão é <b>root</b> e senha <b>mysql</b> 
 <br><br>
 <b>Nota:</b> Esse arquivo de estrutura foi testado somente no banco <b>MariaDB versão 11.2.2</b>
-
 
 <h4>6- Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
