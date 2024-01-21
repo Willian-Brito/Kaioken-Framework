@@ -49,7 +49,7 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 <h2>:open_file_folder: Estrutura</h2>
 <p>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/framework/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/prints/Estrutura%20de%20Diret%C3%B3rios.png" alt="Estrutura de Diretórios do Framework" />
 </div>
 </p>
 

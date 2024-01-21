@@ -1,3 +1,5 @@
 *.key
 .vscode
 app/Frontend/Page/Sistema/Usuario/img/
+app/Backend/Config/kaioken.ini
+app/Backend/Database/ScriptAtualizacao.sql
