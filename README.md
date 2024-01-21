@@ -193,6 +193,8 @@ Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir 
 <br><br>
 <b>Nota:</b> Esse arquivo de estrutura foi testado somente no banco <b>MariaDB versão 11.2.2</b>
 
+Agora é só executar a aplicação e logar com usuário <b>kaioken</b> com a senha <b>kaioken123</b>.
+
 <h4>6- Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
 Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como <b>save()</b>, <b>delete()</b> e <b>load()</b> que manipulam um objeto na base de dados.
