@@ -170,9 +170,15 @@ A seguir um exemplo de um conector para <b>MySQL</b> e <b>MariaDB</b>:
     host = 'localhost'
     name = 'kaioken'
     user = 'kaioken'
-    pass = 'kaioken123'
+    pass = 'kaioken123#'
     port = '3306'
     type = 'mysql'
+
+Para alterar a senha do usuário do banco de dados basta alterar o campo <b>pass</b> no arquivo <b>kaioken.ini</b> e no arquivo de gerar a estrutura do banco de dados do app que está neste caminho: <b>app/Backend/Database/Begin/0000 - ConfiguracaoInicial.sql</b>.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/prints/config_senha.png" alt="Configuração da senha do usuário do banco de dados do app" />
+</div>
 
 Depois de realizar a configuração, vamos <b>criptografar o arquivo</b> para mantermos a segurança dos dados de conexão com o banco de dados. Para criptografar, basta entrar na pasta <b>framework/Security/</b> e executar o comando a seguir:
 
@@ -196,7 +202,7 @@ Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir 
 Agora é só executar a aplicação e logar com usuário <b>kaioken</b> com a senha <b>kaioken123</b>.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/login_kaioken.png" alt="Pagina de login do app" />
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/prints/login_kaioken.png" alt="Pagina de login do app" />
 </div>
 
 <h4>6- Classe Modelo</h4>

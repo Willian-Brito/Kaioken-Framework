@@ -4,10 +4,10 @@ IF ( NOT EXISTS( SELECT User
                   WHERE User = 'kaioken') )
 THEN
 
-    -- # Criando o Usuário (msystem)
-    CREATE USER 'kaioken'@'localhost' IDENTIFIED BY 'kaioken123';
+    -- # Criando o Usuário (kaioken framework)
+    CREATE USER 'kaioken'@'localhost' IDENTIFIED BY 'kaioken123#';
 
-    -- # Adicionando permissões ao usuário msystem
+    -- # Adicionando permissões ao usuário kaioken framework
      GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE, SHOW VIEW, LOCK TABLES
         ON kaioken.* 
         TO 'kaioken'@'localhost';
