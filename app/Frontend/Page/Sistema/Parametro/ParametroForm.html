@@ -1,0 +1,89 @@
+
+<div>
+    <div style="display:block">
+
+        <div style="clear:both">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <div class="panel-title">
+                        <h4>Cadastro de Parâmetro</h4>
+                    </div>
+
+                </div>
+                    
+                <div class="panel-body">
+
+                    <form class="form-horizontal" enctype="multipart/form-data" method="post" name="form_parametro" width="100%">
+                        
+                        <div style="display: none;">
+                            <input class="field" name="PageStatus" value="" type="hidden">
+                            <input id="TokenCsrf" class="field" name="Csrf_Token_Form" value="" type="hidden">
+                        </div>
+
+                        <div class="mesma-linha">
+
+                            <div class="form-input">
+                                <label class="col-sm-2 align-label">Usuario</label>
+
+                                {cbUsuario}
+
+                            </div>
+
+                            <div class="form-input">
+                                <label class="col-sm-2 align-label">Tipos de Parâmetros</label>
+
+                                {cbTipoParametro}
+
+                            </div>                        
+
+                        </div>                               
+
+                        <div class="mesma-linha">
+
+                            <div class="form-input">
+                                <label class="col-sm-2 align-label">Descrição</label>
+                                <input class="form-control" name="Descricao" {Descricao} type="text" style="width:100%" maxlength="200" id="txtDescricao">
+                            </div>
+
+                            <div class="form-input" style="width: 30%">
+                                <label class="col-sm-2 align-label">Valor</label>
+                                <input class="form-control" name="Valor" {Valor} type="text" style="width:100%" maxlength="50" id="txtValor">
+                            </div>
+
+                        </div>
+
+                        <div class="mesma-linha">
+
+                            <div class="form-group" style="width: 101%; margin-top: 10px; margin-left: -15px !important;">
+                                <label class="col-sm-2 control-label" style="margin-left: 10px;">Observação</label>
+
+                                <div class="form-input">
+                                    <textarea class="form-control" {Observacao} maxlength="1000" name="Observacao" style="width:100%; height:70px; margin-left: 15px; margin-top: -10px;" id="txtObservacao"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+                
+                <div class="panel-footer">
+                    <div>
+                        <button name="salvar" type="button" onclick="document.form_parametro.action='?class=ParametroForm&method=onSave'; document.form_parametro.submit()" class="btn btn-success" id="btnSalvar">
+                            Salvar
+                        </button>
+                        <button name="cancelar" type="button" onclick="document.form_parametro.action='?class=ParametroForm&method=onEdit'; document.form_parametro.submit()" class="btn btn-default">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script type="text/javascript" src="Frontend/Page/Sistema/Usuario/Usuario.js"></script> -->

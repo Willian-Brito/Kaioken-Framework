@@ -1,0 +1,182 @@
+
+<style>
+
+    .container-form {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: flex-start; 
+        align-items: center;
+    }
+
+    .container-img {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    #btn-cancelar-img {
+        width: 30px;
+        height: 30px;
+        margin-top: 3px;
+        cursor: pointer;
+    }
+
+    .avatar-img {
+        width: 130px; 
+        height: 130px; 
+        border-radius: 10%; 
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .form-fields {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+    }
+
+   .div-img {
+        /* border: 3px solid #ccc; */
+        border: 3px solid var(--color-light-2);
+        padding: 7px; 
+        margin-right: 10px;
+    }
+
+    .div-img:hover {
+        opacity: 0.7;
+    }
+
+    #div-img-cancelar:hover {
+        opacity: 0.7;
+    }
+</style>
+
+<div>
+    <div style="display:block">
+
+        <div style="clear:both">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <div class="panel-title">
+                        <h4>Cadastro de Usuário</h4>
+                    </div>
+
+                </div>
+                    
+                <div class="panel-body">
+
+                    <form class="form-horizontal" enctype="multipart/form-data" method="post" name="form_usuario" width="100%">
+                        
+                        <div style="display: none;">
+                            <input class="field" name="PageStatus" value="" type="hidden">
+                            <input id="TokenCsrf" class="field" name="Csrf_Token_Form" value="" type="hidden">
+                        </div>
+                        
+                        <div class="container-form">
+
+                            <div class="container-img">
+
+                                <div class="div-img">
+
+                                    <label for="picture-input" class="avatar-img" tabindex="0">
+                                        <img src="app/Frontend/assets/img/icon/avatar.svg" class="avatar-img" id="avatar-img" alt="avatar">
+                                    </label>
+                                    <input type="file" accept="image/*" name="FotoPerfil" id="picture-input" style="display: none;">
+                                </div>
+
+                                <div id="div-img-cancelar">
+                                    <img src="app/Frontend/assets/img/icon/excluir.png" id="btn-cancelar-img" onclick="removerFoto(this)" title="Click aqui para remover a foto de perfil" alt="imagem com circulo vermelho com um x branco dentro circulo">
+                                </div>
+                            </div>
+                                                        
+                            <div class="form-fields">
+
+                                <div class="mesma-linha">
+
+                                    <div class="form-input">
+                                        <label class="col-sm-2 align-label">Nome</label>
+                                        <input class="form-control" name="Nome" {Nome} type="text" style="width:100%" maxlength="100" id="txtNome">    
+                                    </div>
+        
+                                    <div class="form-input">
+        
+                                        <label class="col-sm-2 align-label">Usuario</label>    
+                                        <input class="form-control" name="Usuario" {Usuario} type="text" style="width:100%" maxlength="20" id="txtUsuario">
+                                    </div>                         
+        
+                                </div>                               
+        
+                                <div class="mesma-linha" id="credenciais">
+        
+                                    <div class="form-input">
+                                        <label class="col-sm-2 align-label">Senha</label>
+                                        <input class="form-control" name="Senha" {Senha} type="password" style="width:100%" maxlength="200" id="txtSenha">
+                                    </div>
+        
+                                    <div class="form-input">
+                                        <label class="col-sm-2 align-label"> Confirmar Senha</label>
+                                        <input class="form-control" name="ConfirmarSenha" {ConfirmarSenha} type="password" style="width:100%" maxlength="200" id="txtConfirmarSenha">
+                                    </div>
+        
+                                </div>
+        
+                                <div class="mesma-linha">
+        
+                                    <div class="form-input">
+                                        <label class="col-sm-2 align-label">Email</label>
+                                        <input class="form-control" name="Email" {Email} type="text" style="width:100%" maxlength="200" id="txtEmail">
+                                    </div>
+        
+                                    <div class="form-input" id="gpPerfil">
+                                        <label class="col-sm-2 align-label">Perfil</label>
+        
+                                        {cbPerfil}
+        
+                                    </div>                                    
+        
+                                </div>
+
+                                <div class="mesma-linha" style="margin-top: 0px;">
+
+                                    <div class="form-input">
+        
+                                        <label class="col-sm-2 align-label">Esta Ativo ?</label>
+                                        
+                                        <div style=" display: flex; width: 100%;">
+                                            <input name="EhAtivo" type="checkbox" id="chkEhAtivo" value="0" onchange="checkBoxSelected(this)">
+                                            <p style="top: 5px;position: relative; font-weight: bold; margin-left: 10px;">Sim</p>
+                                        </div>                                
+                                    </div>
+        
+                                </div>
+
+                            </div>
+
+                        </div>                       
+
+                    </form>
+
+                </div>
+                
+                <div class="panel-footer">
+                    <div>
+                        <button name="salvar" type="button" onclick="document.form_usuario.action='?class=UsuarioForm&method=onSave'; document.form_usuario.submit()" class="btn btn-success" id="btnSalvar">
+                            Salvar
+                        </button>
+                        <button name="cancelar" type="button" onclick="document.form_usuario.action='?class=UsuarioForm&method=onEdit'; document.form_usuario.submit()" class="btn btn-default">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="app/Frontend/Page/Sistema/Usuario/Usuario.js"></script>

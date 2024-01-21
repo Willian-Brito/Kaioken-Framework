@@ -58,7 +58,7 @@ class Sidebar extends Record
         $link->class = "nav_link";
 
         if($menu->Descricao == "Dashboard")
-            $link->href = "index.php?class=DashboardList";
+            $link->href = "index.php?class=CidadeList";
 
         $span = new Element('span');
         $span->class = "material-icons-sharp";

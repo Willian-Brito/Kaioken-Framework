@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<rect x="277.333" y="341.333" style="fill:#6C747A;" width="138.667" height="21.333"/>
+	<polygon style="fill:#6C747A;" points="391.531,402.208 376.448,387.125 411.584,352 376.448,316.875 391.531,301.792 441.749,352 
+			"/>
+	<rect x="234.667" y="341.333" style="fill:#6C747A;" width="21.333" height="21.333"/>
+	<rect x="192" y="341.333" style="fill:#6C747A;" width="21.333" height="21.333"/>
+	<rect x="149.333" y="341.333" style="fill:#6C747A;" width="21.333" height="21.333"/>
+	<polygon style="fill:#6C747A;" points="309.333,117.333 234.667,117.333 234.667,42.667 256,42.667 256,96 309.333,96 	"/>
+	<polygon style="fill:#6C747A;" points="320,480 0,480 0,32 249.749,32 320,102.251 320,320 298.667,320 298.667,111.083 
+		240.917,53.333 21.333,53.333 21.333,458.667 298.667,458.667 298.667,384 320,384 	"/>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-40.4063" y1="606.9688" x2="-18.4063" y2="606.9688" gradientTransform="matrix(10.6667 0 0 -10.6667 473.6667 6826.3335)">
+	<stop  offset="0" style="stop-color:#73DBE6"/>
+	<stop  offset="1" style="stop-color:#CAE6B8"/>
+</linearGradient>
+<rect x="42.667" y="266.667" style="fill:url(#SVGID_1_);" width="234.667" height="170.667"/>
+<g>
+	<rect x="42.667" y="96" style="fill:#6C747A;" width="149.333" height="21.333"/>
+	<rect x="341.333" y="96" style="fill:#6C747A;" width="42.667" height="21.333"/>
+	<rect x="42.667" y="138.667" style="fill:#6C747A;" width="64" height="21.333"/>
+	<rect x="128" y="138.667" style="fill:#6C747A;" width="149.333" height="21.333"/>
+	<rect x="42.667" y="224" style="fill:#6C747A;" width="234.667" height="21.333"/>
+	<rect x="42.667" y="181.333" style="fill:#6C747A;" width="149.333" height="21.333"/>
+	<rect x="213.333" y="181.333" style="fill:#6C747A;" width="64" height="21.333"/>
+	<polygon style="fill:#6C747A;" points="512,480 341.333,480 341.333,458.667 490.667,458.667 490.667,111.083 432.917,53.333 
+		341.333,53.333 341.333,32 441.749,32 512,102.251 	"/>
+	<polygon style="fill:#6C747A;" points="501.333,117.333 426.667,117.333 426.667,42.667 448,42.667 448,96 501.333,96 	"/>
+</g>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-12.4063" y1="606.9688" x2="-0.4063" y2="606.9688" gradientTransform="matrix(10.6667 0 0 -10.6667 473.6667 6826.3335)">
+	<stop  offset="0" style="stop-color:#FD6330"/>
+	<stop  offset="1" style="stop-color:#FD8530"/>
+</linearGradient>
+<rect x="341.333" y="266.667" style="fill:url(#SVGID_2_);" width="128" height="170.667"/>
+<g>
+	<rect x="341.333" y="138.667" style="fill:#6C747A;" width="128" height="21.333"/>
+	<rect x="341.333" y="224" style="fill:#6C747A;" width="128" height="21.333"/>
+	<rect x="341.333" y="181.333" style="fill:#6C747A;" width="42.667" height="21.333"/>
+	<rect x="405.333" y="181.333" style="fill:#6C747A;" width="64" height="21.333"/>
+</g>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-30.4063" y1="606.9688" x2="-20.4063" y2="606.9688" gradientTransform="matrix(10.6667 0 0 -10.6667 473.6667 6826.3335)">
+	<stop  offset="0" style="stop-color:#31646F"/>
+	<stop  offset="1" style="stop-color:#566958"/>
+</linearGradient>
+<path style="fill:url(#SVGID_3_);" d="M256,362.667h-21.333v-21.333H256V362.667z M213.333,341.333H192v21.333h21.333V341.333z
+	 M170.667,341.333h-21.333v21.333h21.333V341.333z"/>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-12.4063" y1="606.9688" x2="-2.9922" y2="606.9688" gradientTransform="matrix(10.6667 0 0 -10.6667 473.6667 6826.3335)">
+	<stop  offset="0" style="stop-color:#6B2B12"/>
+	<stop  offset="1" style="stop-color:#6B3D17"/>
+</linearGradient>
+<polygon style="fill:url(#SVGID_4_);" points="391.531,301.792 376.448,316.875 400.917,341.333 341.333,341.333 341.333,362.667 
+	400.917,362.667 376.448,387.125 391.531,402.208 441.749,352 "/>
+</svg>

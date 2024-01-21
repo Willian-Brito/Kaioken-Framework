@@ -15,12 +15,13 @@
 
 $(document).ready(function() {
 
-    InitializeFunctions();   
+    InitializeFunctions();
 });
 
 //#region InitializeFunctions
 function InitializeFunctions() {
-
+    
+    // KaiokenSave();
     MostrarMenuLateral();
     FecharMenuLateral();
     TransformarMenuLateral();
@@ -60,11 +61,11 @@ function ClicarNoMenu(IdMenu) {
 //#endregion
 
 //#region ClicarMenuDashboard
-function ClicarMenuDashboard()
-{
-    $('#Dashboard').trigger('click');
-    window.location.href = "index.php?class=DashboardList";
-}
+// function ClicarMenuDashboard()
+// {
+//     $('#Dashboard').trigger('click');
+//     window.location.href = "index.php?class=DashboardList";
+// }
 //#endregion
 
 //#region MostrarMenuLateral
@@ -106,16 +107,17 @@ function FecharMenuLateral() {
 //#region TrocarTema
 function TrocarTema() {
 
+    
     Tema.addEventListener('click', () => {
         Body.classList.toggle(darkTheme);
 
         if(Body.classList.contains(darkTheme)) {
             localStorage.setItem("Theme", darkTheme);
             // BtnLogo.src = "Frontend/assets/img/logo-branco-2.png";
-            BtnLogo.src = "Frontend/assets/img/logo-menu.png";
+            BtnLogo.src = "app/Frontend/assets/img/logo-menu.png";
         } else {
             localStorage.setItem("Theme", "light-theme");
-            BtnLogo.src = "Frontend/assets/img/logo-menu1.png";
+            BtnLogo.src = "app/Frontend/assets/img/logo-menu1.png";
         }
 
         Tema.querySelector('span:nth-child(1)').classList.toggle('ativo');
@@ -131,6 +133,9 @@ function CarregarConfiguracao() {
     let menu = localStorage.getItem("Menu")
     let selecaoMenu = localStorage.getItem("SelecaoMenu")
 
+    if(!menu)
+        localStorage.setItem("Menu", "open")
+
     if(selecaoMenu) 
         ClicarNoMenu(selecaoMenu);
 
@@ -139,7 +144,7 @@ function CarregarConfiguracao() {
         Tema.querySelector('span:nth-child(1)').classList.toggle('ativo');
         Tema.querySelector('span:nth-child(2)').classList.toggle('ativo');
         // BtnLogo.src = "Frontend/assets/img/logo-branco-2.png";
-        BtnLogo.src = "Frontend/assets/img/logo-menu.png";
+        BtnLogo.src = "app/Frontend/assets/img/logo-menu.png";
     }
 
     if (menu && menu === "close") {
@@ -165,9 +170,9 @@ function EfeitoScrollMenu()
         const imagem = document.querySelector("header img");
 
         if(window.scrollY > 0)
-            imagem.src = "Apps/AreaContador/Frontend/assets/img/MSystem.png";
+            imagem.src = "app/Frontend/assets/img/MSystem.png";
         else
-            imagem.src = "Apps/AreaContador/Frontend/assets/img/MSystem1.png";
+            imagem.src = "app/Frontend/assets/img/MSystem1.png";
 
         header.classList.toggle("sticky", window.scrollY > 0);
     });
@@ -275,11 +280,34 @@ function AtivarSelecaoMenu() {
 function CollapseSubMenu() {
 
     let arrow = document.querySelectorAll(".arrow");
+    let iconLink = document.querySelectorAll(".icon-link");
+
+    iconLink.forEach(item => item.addEventListener('click', (e)=> {
+
+        let menu = localStorage.getItem("Menu");
+
+        if(menu === "open")
+        {
+            let li = e.target.parentElement.parentElement.parentElement;
+
+            li.classList.toggle("show-submenu");
+            li.style.css = "z-index: 99;";
+        }
+
+    }));
 
     arrow.forEach(item => item.addEventListener('click', (e)=> {
 
-        let arrowParent = e.target.parentElement.parentElement;
-        arrowParent.classList.toggle("show-submenu");
+        let menu = localStorage.getItem("Menu");
+
+        if(menu === "open")
+        {
+            let li = e.target.parentElement.parentElement;
+
+            li.classList.toggle("show-submenu");
+            li.style.css = "z-index: 99;";
+        }
+
     }));
 }
 //#endregion
@@ -365,6 +393,41 @@ function ativarCheckBox(IdFormulario)
 }
 //#endregion
 
+//#region checkBoxSelected
+function checkBoxSelected(input) {
+    console.log(input)
+    var id = $(input).attr('id')
+
+    if ($(`#${id}`).val() == "0") {
+        $(`#${id}`).prop('value', '1')
+    } else {
+        $(`#${id}`).prop('value', '0')
+    }
+}
+//#endregion
+
+//#region html
+function html(id, value) {
+
+    if (existsElement(id)) {
+        
+        if (value != undefined) {
+            return $(`#${id}`).html(value);
+        } else {
+            return $(`#${id}`).html();
+        }
+    }
+}
+//#endregion
+
+//#region existsElement
+function existsElement(id) {
+
+    var exist = $(`#${id}`).length == 1;
+    return exist;
+}
+//#endregion
+
 //#region setDataForm
 function setDataForm(Id, value)
 {
@@ -388,5 +451,47 @@ function setPageStatus(value) {
 //#region generateTokenCSRF
 function generateTokenCSRF(token) {
     $('#TokenCsrf').val(token)
+}
+//#endregion
+
+//#region downloadFile
+/**
+ * Download a file
+ */
+function downloadFile(file, basename)
+{
+    window.open('../../../../../KaiokenFramework/Util/download.php?file='+file+'&basename='+basename, '_blank');
+}
+//#endregion
+
+//#region AddSelecaoMenu
+function AddSelecaoMenu() {
+    console.log('AddSelecaoMenu')
+    $('.barra-lateral ul li').removeClass("selecionado");
+    $('#Dashboard').addClass("selecionado");    
+}
+//#endregion
+
+//#region KaiokenSave
+function KaiokenSave() {
+
+    let btnSalvar = $("#btnSalvar:not(.no-framework)");
+
+    btnSalvar.click(function (e) {
+            
+        e.preventDefault();
+        
+        let form = $('form');
+        let form_ajax = $('#ajax_load');
+
+        $.ajax({
+            url: form.attr("action"),
+            data: form.serialize(),
+            type: 'POST',
+            dataType: 'json',
+            success: function success(response) { console.log(response); form_ajax.html(response) },
+            error: function error(response){ Msg("error", response) },
+        })
+    })
 }
 //#endregion

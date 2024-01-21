@@ -7,7 +7,7 @@
 require_once 'Cryptography.php';
 use KaiokenFramework\Security\Cryptography;
 
-$ARQUIVO_CONFIG = "../../Apps/AreaContador/Backend/Config/Msystem.ini";
+$ARQUIVO_CONFIG = "../../app/Backend/Config/kaioken.ini";
 
 openFile();
 

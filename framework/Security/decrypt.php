@@ -10,7 +10,7 @@ require_once '../Database/Configuration.php';
 use KaiokenFramework\Database\Configuration;
 use KaiokenFramework\Security\Cryptography;
 
-$ARQUIVO_CONFIG = "../../Apps/AreaContador/Backend/Config/Msystem.ini";
+$ARQUIVO_CONFIG = "../../app/Backend/Config/kaioken.ini";
 
 openFile();
 

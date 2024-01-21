@@ -3,9 +3,10 @@
 #region Imports
 namespace KaiokenFramework\Security;
 
+use Exception;
+use KaiokenFramework\Components\Base\JScript;
 use KaiokenFramework\Database\Criteria;
 use KaiokenFramework\Database\Repository;
-use KaiokenFramework\Router\Router;
 use KaiokenFramework\Session\Session;
 #endregion
 
@@ -33,7 +34,8 @@ class Token
             Session::setValue('Csrf_Token_Session', md5(uniqid()));
             $token = Session::getValue("Csrf_Token_Session");
     
-            echo "<script> window.onload = function() { generateTokenCSRF('$token'); } </script>";
+            $script = "generateTokenCSRF('$token')";
+            JScript::onLoad($script);
         }
     }
     #endregion
@@ -45,18 +47,11 @@ class Token
     public static function validateTokenCSRF()
     {
         if(!isset($_SESSION['Csrf_Token_Session']))
-        {
-            $class = $_GET['class'];
-            Router::redirect("index.php?class=$class", 0);
-            die();
-        }
+            throw new Exception("Token Inválido!");        
 
         if(!self::isValidToken())
-        {
-            $class = $_GET['class'];
-            Router::redirect("index.php?class=$class", 0);
-            die();
-        }
+            throw new Exception("Token Inválido!");
+        
         
         unset($_SESSION['Csrf_Token_Session']);
         self::generateTokenCsrf();
@@ -87,7 +82,7 @@ class Token
     }
     #endregion
 
-    #region ehLista
+    #region ehFormulario
     private static function ehFormulario()
     {
         $class = $_GET['class'];

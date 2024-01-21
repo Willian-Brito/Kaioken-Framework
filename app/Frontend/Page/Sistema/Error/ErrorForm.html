@@ -1,0 +1,66 @@
+    <style>
+
+        .container-erro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-error {
+            margin: 50px;
+        }
+
+        .error-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .img-error {
+            width: 150px;
+            height: 150px;
+        }
+
+        span.font-tittle {
+            font-size: 155px;
+        }
+
+        span.font-subtittle {
+            font-size: 4.4rem;
+        }
+
+        span.error-message {
+            font-size: 35px;
+            font-weight: 900;
+            color: var(--color-danger);
+        }
+
+        span.message {
+            font-size: 35px;
+
+        }
+    </style>
+
+
+    <div class="container-erro">
+
+        <div class="content-error">
+
+            <div class="error-title">
+                <img class="img-error" src="app/Frontend/assets/img/icon/warning.png" alt="imagem de erro">
+                <span class="font-tittle">Oops!<span>
+            </div>
+    
+            <div class="error-subtitle">
+                <span class="font-subtittle">Algo deu Errado</span>
+            </div>
+            
+            <span class="message"> <span class="error-message">Erro:</span> {{Error-Message}}</span>
+
+        </div>
+
+    </div>

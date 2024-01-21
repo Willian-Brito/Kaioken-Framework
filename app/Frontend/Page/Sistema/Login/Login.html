@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<!-- Codificação de Caracteres -->
+    <meta charset="UTF-8">
+
+	<title>MS Accounting</title>
+	<link rel="stylesheet" type="text/css" href="app/Frontend/Page/Sistema/Login/Login.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="app/Frontend/assets/img/logo-title.ico" type="image/x-icon">
+
+	<!-- MATERIAL ICONS CDN --->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+	<img class="wave" src="app/Frontend/assets/img/wave.webp">
+	<div class="container">
+		<div class="img">
+			<img src="app/Frontend/assets/img/bg1.webp">
+		</div>
+		<div class="box">
+
+			<div class="login-content">
+				{content}
+				<form enctype="multipart/form-data" method="post" name="form_login"> 
+        
+            		<div id="result"></div>
+
+					<div class="avatar">
+						<img src="app/Frontend/assets/img/logo-menu1.png">
+					</div>
+					<h2 class="title">Bem-vindo</h2>
+
+					   <div class="input-div one">
+						  <div class="i">
+								  <i class="fas fa-user"></i>
+						  </div>
+						  <div class="div">
+								  <h5>Username</h5>
+								  <input id="Usuario" type="text" class="input" name="Usuario">
+						  </div>
+					   </div>
+					   <div class="input-div pass">
+						  <div class="i"> 
+							   <i class="fas fa-lock"></i>
+						  </div>
+						  <div class="div">
+							   <h5>Password</h5>
+							   <input id="Senha" type="password" class="input" name="Senha">
+					   </div>
+					</div>
+					<a href="?class=RecuperarSenhaForm">Esqueceu a senha?</a>
+					<button type="submit" id="Entrar" class="btn" onclick="document.form_login.action='?class=LoginForm&method=onLogin'; document.form_login.submit()">Entrar</button>
+				</form>
+			</div>
+
+		</div>
+
+    </div>
+
+	<!-- JQUERY -->
+	<script src='app/Frontend/assets/js/jquery.js'></script>
+
+	<!-- LOGIN -->
+    <script type="text/javascript" src="app/Frontend/Page/Sistema/Login/Login.js"></script>
+
+</body>
+</html>

@@ -52,7 +52,7 @@ class MySqlBackup implements IBackup
     #region criarDiretorio
     private function criarDiretorio($path)
     {
-        $diretorio = empty($path) ? 'Backend/Tmp/backup/' : $path;
+        $diretorio = empty($path) ? 'app/Backend/Tmp/backup/' : $path;
 
         if(!is_dir($diretorio))
         {

@@ -13,7 +13,7 @@
 
 @import url("https://fonts.googleapis.com.css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
-:root {
+:root { 
 
     /* ====== Color ====== */
     --color-primary: #7380ec;
@@ -75,7 +75,6 @@
     --color-light-2: rgba(0, 0, 0, 0.43);
     --box-shadow: 0 2rem 3rem var(--color-light);
     --color-header-datagrid: rgb(0 0 0 / 45%);
-    /* --color-primary:#4d5491; */
     --color-primary:#f88b32;
     --color-focus: #eca973a2;
     --color-input-border: var(--color-light);
@@ -115,6 +114,10 @@ body {
     user-select: none;
     overflow-x: hidden;
     color: var(--color-dark);
+}
+
+input {
+    accent-color: var(--color-primary);
 }
 
 a {
@@ -404,6 +407,11 @@ aside .barra-lateral .nav-links li a{
     transition: var(--trans-03);
 }
 
+aside .barra-lateral .nav-links li a h3,
+aside .barra-lateral .nav-links li a span {
+    cursor: pointer;
+}
+
 aside .barra-lateral .nav-links li a .nav_link{
     font-size: 18px;
     font-weight: 400;
@@ -646,19 +654,6 @@ aside .barra-lateral.close .em-breve {
 
 /* ============== CONTEÚDO ============== */
 
-/* main .date {
-    display: inline-block;
-    background: var(--color-light);
-    border-radius: var(--border-radius-1);
-    margin-top: 1rem;
-    padding: 0.5rem 1.6rem;
-}
-
-main .date input[type='date'] {
-    background: transparent;
-    color: var(--color-dark);
-} */
-
 main .insights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -667,27 +662,37 @@ main .insights {
 }
 
 main .insights>div {
+    display: flex;
+    justify-content: space-between;
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
     transition: var(--trans-03);
+    align-items: flex-start;
+
 }
 
 main .insights>div span {
-    background: #4699c9;
+    background: #46c99f;
     padding: 0.5rem;
     border-radius: 50%;
     color: var(--color-white);
-    font-size: 2rem;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    /* margin-right: 3rem; */
 }
 
-main .insights>div.despesas span {
+main .insights>div.notas-cancelada span {
     background: var(--color-danger);
 }
 
-main .insights>div.lucro span {
-    background: var(--color-success);
+main .insights>div.notas-inutilizada span {
+    background: #4699c9;
 }
 
 main .insights>div .middle {
@@ -697,7 +702,12 @@ main .insights>div .middle {
 }
 
 main .insights h3 {
-    margin: 1rem 0 0.6rem;
+    margin: 1rem 0 0.4rem;
+    font-size: 2rem;
+}
+
+main .insights h1 {
+    font-weight: 500;
     font-size: 1rem;
 }
 
@@ -713,45 +723,9 @@ main .insights svg {
     height: 7rem;
 }
 
-main .insights svg circle {
-    fill: none;
-    stroke: var(--color-primary);
-    stroke-width: 14;
-    stroke-linecap: round;
-    transform: translate(5px, 5px);
-    stroke-dasharray: 110;
-    stroke-dashoffset: 92;
-}
-
-main .insights .vendas svg circle {
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .insights .despesas svg circle {
-    stroke-dashoffset: 20;
-    stroke-dasharray: 80;
-}
-
-main .insights .despesas svg circle {
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
-}
-
-main .insights .progress .numero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+main .insights .qtd-nota {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main .insights .progress small {
-    margin-top: 1.6rem;
-    display: block;
+    font-size: 2rem;
 }
 
 /* ============== RODAPÉ ============== */
@@ -1122,22 +1096,18 @@ html {
     transition: var(--trans-05);
 }
 .material-alert.info{
-    /* background-color: #039be5; */
     background-color: var(--color-material-info);
     color: #fff;
 }
 .material-alert.success{
-    /* background-color: #43a047; */
     background-color: var(--color-material-success);
     color: #fff;
 }
 .material-alert.error{
-    /* background-color: #c62828; */
     background-color: var(--color-material-error);
     color: #fff;
 }
 .material-alert.warning{
-    /* background-color: #fbc02d; */
     background-color: var(--color-material-warning);
     color: #fff;
 }
@@ -1157,10 +1127,6 @@ html {
     align-items: center;
     font-size: 15px;
     z-index: 99;
-/* 
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s, top 0.2s, visibility 0.2s; */
 }
 
 .toast-visible {

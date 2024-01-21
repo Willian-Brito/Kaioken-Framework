@@ -134,38 +134,67 @@ Crie o banco de dados de sua aplicação, usando PostgreSQL, MySQL e SQLite (tes
 
 Configure o conector dentro da aplicação:
 
-    app/config/msystem.ini
+    app/Backend/Config/kaioken.ini
 
-Cada banco de dados deve ser configurado na pasta <b>app/config</b> por um INI. Para usar um conector, você deve ter o driver correto habilitado no <b>php.ini</b>.
+Cada banco de dados deve ser configurado na pasta <b>app/Backend/Config</b> por um INI. Para usar um conector, você deve ter o driver correto habilitado no <b>php.ini</b>.
+
+Exemplo do significado dos campos:
+
+    host = 'IP do Servidor do Banco de Dados'
+    port = 'PORTA do Servidor do Banco de Dados'
+    name = 'NOME do Banco de Dados'
+    user = 'USUÁRIO do Banco de Dados Usado pelo APP'
+    pass = 'SENHA do USUÁRIO do Banco de Dados Usado pelo APP'
+    type = 'TIPO do Banco de Dados'
 
 A seguir um exemplo de um conector para <b>SQLite</b>:
 
-    host = ""
-    port = ""
-    name = "app/database/exemplo.db"
-    user = ""
-    pass = ""
-    type = "sqlite"
+    host = ''
+    port = ''
+    name = 'app/database/exemplo.db'
+    user = ''
+    pass = ''
+    type = 'sqlite'
 
 A seguir um exemplo de um conector para <b>PostgreSQL</b>:
 
-    host = "192.168.1.102"
-    port = ""
-    name = "exemplo"
-    user = "postgres"
-    pass = "postgres"
-    type = "pgsql"
+    host = '192.168.1.102'
+    port = ''
+    name = 'exemplo'
+    user = 'postgres'
+    pass = 'postgres'
+    type = 'pgsql'
 
-A seguir um exemplo de um conector para <b>MySQL</b>:
+A seguir um exemplo de um conector para <b>MySQL</b> e <b>MariaDB</b>:
 
-    host = "127.0.0.1"
-    port = "3306"
-    name = "tutor"
-    user = "root"
-    pass = "mysql"
-    type = "mysql"
+    host = 'localhost'
+    name = 'kaioken'
+    user = 'kaioken'
+    pass = 'kaioken123'
+    port = '3306'
+    type = 'mysql'
 
-<h4>5- Classe Modelo</h4>
+Depois de realizar a configuração agora vamos <b>criptografar o arquivo<b> para mantermos a segurança dos dados de conexão com o banco de dados. Para criptografar, basta entrar na pasta <b>framework/Security/</b> e executar o comando a seguir:
+
+<b>Nota:</b> Para realizar esses comandos não devemos alterar o caminho e nem o nome do arquivo <b>kaioken.ini</b>. Após criptografar pela primeira vez, será gerado o arquivo chave.key na pasta <b>framework/Security/</b>, esse arquivo se trata de uma chave simétrica gerada pelo Kaioken Framework, para criptografar e descriptografar o arquivo kaioken.ini, guarde este aquivo com segurança, pois se trata de um arquivo muito sensível.
+
+    php encrypt.php
+
+Para descriptografar basta executar o comando:
+
+    php decrypt.php
+
+<h4>5- Configurar Estrutura da Aplicação</h4>
+Primeiramente vamos iniciar gerando o <b>script</b> de estrutura do banco de dados, para gerar basta ir na pasta <b>app/Backend/Database</b> e executar o seguinte comando:
+
+    php GerarScriptAtualizacao.php
+
+Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir este arquivo e executar no banco de dados. Geralmente no banco MySQL ou MariaDB o login padrão é root e senha <b>mysql</b> 
+<br><br>
+<b>Nota:</b> Esse arquivo de estrutura foi testado somente no banco <b>MariaDB versão 11.2.2</b>
+
+
+<h4>6- Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
 Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como <b>save()</b>, <b>delete()</b> e <b>load()</b> que manipulam um objeto na base de dados.
 <br><br>
@@ -207,7 +236,7 @@ Agora é o momento de criar as classes do modelo da aplicação. Uma classe mode
         }
     }
 
-<h4>6- Classe Page</h4>
+<h4>7- Classe Page</h4>
 Criando páginas para formulários, listagens, e outros.
 Agora é o momento de criar as páginas da aplicação. Para tal, podem ser usados componentes, templates, ou outras técnicas. <br><br>
 

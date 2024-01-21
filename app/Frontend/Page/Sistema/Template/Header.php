@@ -115,7 +115,7 @@ class Header extends Record
         $foto = new Element('div');
         $foto->class = "foto-perfil";
 
-        $fotoPerfil = !empty($usuario->FotoPerfil) ? $usuario->FotoPerfil : "Frontend/assets/img/icon/avatar.svg";
+        $fotoPerfil = !empty($usuario->FotoPerfil) ? $usuario->FotoPerfil : "app/Frontend/assets/img/icon/avatar.svg";
 
         $img = new Element('img');
         $img->src = "$fotoPerfil";

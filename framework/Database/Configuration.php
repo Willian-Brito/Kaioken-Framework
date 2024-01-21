@@ -14,7 +14,7 @@ class Configuration
 {
     #region Propriedades da Classe
 
-    const ARQUIVO_CONFIG = "Backend/Config/Msystem.ini";
+    const ARQUIVO_CONFIG = "app/Backend/Config/kaioken.ini";
     #endregion
 
     #region Construtor

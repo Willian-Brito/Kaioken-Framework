@@ -59,7 +59,7 @@ class Router
             }
             else 
             {
-                $link = "index.php?class=DashboardList";
+                $link = "index.php?class=CidadeList";
                 JScript::redirect($link);
             }
         }
@@ -69,12 +69,12 @@ class Router
 
             if($nomeClasse == 'RecuperarSenhaForm') 
             {
-                self::$template = file_get_contents('Frontend/Page/Sistema/Login/RecuperarSenha.html');
+                self::$template = file_get_contents('app/Frontend/Page/Sistema/Login/RecuperarSenha.html');
                 self::$class = 'RecuperarSenhaForm';
             }
             else
             {
-                self::$template = file_get_contents('Frontend/Page/Sistema/Login/Login.html');
+                self::$template = file_get_contents('app/Frontend/Page/Sistema/Login/Login.html');
                 self::$class = 'LoginForm';
             }
         }
@@ -123,7 +123,7 @@ class Router
         // DEBUG: self::$content = $e->getMessage() . '<br>' .$e->getTraceAsString();
         if(Session::getValue('logado'))
         {
-            self::$content = file_get_contents('Frontend/Page/Sistema/Error/ErrorForm.html');
+            self::$content = file_get_contents('app/Frontend/Page/Sistema/Error/ErrorForm.html');
             $messageError = $e->getMessage();
             self::$content = str_replace('{{Error-Message}}', $messageError, self::$content);
         }

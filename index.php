@@ -2,6 +2,14 @@
 
 date_default_timezone_set('America/Sao_Paulo');
 
+#region Caminhos
+define("PATH_TMP", 'app/Backend/Tmp');
+define("PATH_IMG", 'app/Frontend/assets/img/icon');
+define("PATH_FRONT_END", 'app/Frontend');
+define("PATH_BACK_END", 'app/Backend');
+define("PATH_FRAMEWORK_DOWNLOAD", '../../Apps/AreaContador/Backend/Tmp/');
+#endregion
+
 #region AutoLoad
 
 #region Framework
@@ -18,13 +26,13 @@ $al->register();
 require_once 'framework/Core/AppLoader.php';
 
 $al= new KaiokenFramework\Core\AppLoader;
-$al->addDirectory('Backend/Controller');
-$al->addDirectory('Backend/Model');
-$al->addDirectory('Backend/Database/View');
-$al->addDirectory('Backend/Service');
-$al->addDirectory('Backend/Router');
-$al->addDirectory('Backend/Reports');
-$al->addDirectory('Frontend/Page');
+$al->addDirectory('app/Backend/Controller');
+$al->addDirectory('app/Backend/Model');
+$al->addDirectory('app/Backend/Database/View');
+$al->addDirectory('app/Backend/Service');
+$al->addDirectory('app/Backend/Router');
+$al->addDirectory('app/Backend/Reports');
+$al->addDirectory('app/Frontend/Page');
 $al->register();
 #endregion
 

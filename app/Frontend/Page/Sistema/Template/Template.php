@@ -23,7 +23,7 @@ class Template extends Page
     {
         #region Html
 
-        $template = "Frontend/Template/Template.html";
+        $template = "app/Frontend/Template/Template.html";
         self::$html = file_get_contents($template);
 
         $IdUsuarioLogado = Session::getValue("IdUsuarioLogado");
