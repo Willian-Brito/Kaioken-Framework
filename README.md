@@ -1,7 +1,7 @@
 # :fire: Kaioken Framework
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/Kaioken%20Framework.png" alt="Kaioken Framework" />
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/prints/Kaioken%20Framework.png" alt="Kaioken Framework" />
 </div>
 
 <h2>:point_right: Introdução</h2>
