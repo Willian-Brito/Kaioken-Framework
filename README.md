@@ -195,6 +195,10 @@ Será gerado um arquivo chamado <b>ScriptAtualizacao.sql</b>, agora basta abrir 
 
 Agora é só executar a aplicação e logar com usuário <b>kaioken</b> com a senha <b>kaioken123</b>.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Willian-Brito/Kaioken-Framework/main/app/Frontend/assets/img/login_kaioken.png" alt="Pagina de login do app" />
+</div>
+
 <h4>6- Classe Modelo</h4>
 Crie classes que representam as tabelas do banco de dados.
 Agora é o momento de criar as classes do modelo da aplicação. Uma classe modelo é filha de <b>Record</b>. Esta classe do <b>framework</b> fornece métodos básicos de persistência como <b>save()</b>, <b>delete()</b> e <b>load()</b> que manipulam um objeto na base de dados.
