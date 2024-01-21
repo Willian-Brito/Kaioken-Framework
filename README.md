@@ -176,7 +176,7 @@ A seguir um exemplo de um conector para <b>MySQL</b> e <b>MariaDB</b>:
 
 Depois de realizar a configuração, vamos <b>criptografar o arquivo</b> para mantermos a segurança dos dados de conexão com o banco de dados. Para criptografar, basta entrar na pasta <b>framework/Security/</b> e executar o comando a seguir:
 
-<b>Nota:</b> Para realizar esses comandos não devemos alterar o caminho e nome do arquivo <b>kaioken.ini</b>. Após criptografar pela primeira vez, será gerado o arquivo <b>chave.key</b> na pasta <b>framework/Security/</b>, esse arquivo se trata de uma chave simétrica gerada pelo Kaioken Framework para criptografar e descriptografar o arquivo kaioken.ini, guarde este aquivo com segurança, pois se trata de um arquivo muito sensível.
+<b>Nota:</b> Para realizar esses comandos não devemos alterar o caminho e nome do arquivo <b>kaioken.ini</b>. Após criptografar pela primeira vez, será gerado o arquivo <b>chave.key</b> na pasta <b>framework/Security/</b>, esse arquivo se trata de uma chave simétrica gerada pelo Kaioken Framework, guarde este aquivo com segurança, pois se trata de um arquivo muito sensível.
 
     php encrypt.php
 
