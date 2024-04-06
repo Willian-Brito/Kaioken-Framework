@@ -19,7 +19,7 @@ Os padrões de projetos que foram utilizados para a construção deste framework
 
 * <b>Connection.php:</b> Encapsula a conexão com o banco de dados configurado, implementa o padrão <b>Singleton</b>.
 	
-* <b>Transaction.php:</b> Utiliza o conceito de transação nas conexões com o banco de dados e também implementa o padrão <b>Singleton</b>.
+* <b>Transaction.php:</b> Essa classe permite agrupar várias operações de escrita em uma única transação e garante que as mudanças sejam aplicadas ao banco de dados de forma consistente. Implementa o padrão <b>Unit of Work</b> e <b>Singleton</b>.
 	
 * <b>Record.php:</b> É uma classe abstrata responsável pelas operações do banco de dados (select, insert, update e delete) e também é um super tipo para toda uma camada de classes da camada Model inspirado no padrão <b>Layer Supertype</b>, as classes filhas deste super tipo são chamadas de <b>ActiveRecord</b>, pois elas implementam comporamentos de regras de negócios e operações de banco de dados por meio de herança.
 
