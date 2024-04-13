@@ -10,7 +10,7 @@
 
   Este projeto foi desenvolvido com o intuito de melhorar a produtividade e segurança no desenvolvimento do <b>MS Accounting</b> que será um <b>novo produto</b> da empresa <b>MSystem</b>, onde sou responsável pelo desenvolvimento.
 
-  Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>Padrões de Projetos</b> do <b>GoF</b> e <b>Padrões de Arquitetura de Aplicações Corporativas</b> do <b>Martin Fowler</b>.
+  Neste <b>Framework</b> foi aplicado princípios e recomendações de <b>desenvolvimento seguro</b> e boas práticas de engenharia de software como <b>Padrões de Projetos</b> e <b>Padrões de Arquiteturais</b>.
 </p>
 
 <h2>:page_facing_up: Padrões Arquiteturais e Projeto</h2>
