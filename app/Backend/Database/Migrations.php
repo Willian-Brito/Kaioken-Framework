@@ -2,14 +2,14 @@
 
 $pasta = __DIR__;
 $conteudoFinal = '';
-$ScriptAtualizacao = $pasta . '/ScriptAtualizacao.sql';
-$ScriptFinal = new SplFileObject($ScriptAtualizacao, 'w');
+$Migrations = $pasta . '/Migrations.sql';
+$ScriptFinal = new SplFileObject($Migrations, 'w');
 
-GerarScriptAtualizacao();
+gerarMigrations();
 
-#region GerarScriptAtualizacao
+#region gerarMigrations
 
-function GerarScriptAtualizacao()
+function gerarMigrations()
 {
     global $pasta;
     
